@@ -1,6 +1,6 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import axios from "axios";
+// import {Link} from "react-router-dom";
+// import axios from "axios";
 
 class Search extends React.Component {
   state = {
@@ -10,7 +10,7 @@ class Search extends React.Component {
 
   }
 
-  render() {
+  render() {      
     return (
         <div>
             <h1> This is the Search page. </h1>

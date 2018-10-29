@@ -5,11 +5,13 @@ import Resources from "./components/pages/Resources";
 import Home from "./components/pages/Home";
 import Search from "./components/pages/Search";
 import New from "./components/pages/New";
+import CM from "./components/CM"
 
 const App = () => (
   <Router>
     <div className="container">
       <Header/>
+      <CM />
       <Route exact path="/" component={Home} />
       <Route exact path="/resources" component={Resources} />
       <Route exact path="/search" component={Search} />
