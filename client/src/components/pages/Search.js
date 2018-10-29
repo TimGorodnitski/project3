@@ -13,7 +13,7 @@ class Search extends React.Component {
   render() {
     return (
         <div>
-            <h1> This is the search page. </h1>
+            <h1> This is the Search page. </h1>
         </div>
     );
   }

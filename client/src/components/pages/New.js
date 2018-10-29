@@ -13,7 +13,7 @@ class New extends React.Component {
   render() {
     return (
         <div>
-            <h1> This is the new snippet page. </h1>
+            <h1> This is the New Snippet page. </h1>
         </div>
     );
   }
