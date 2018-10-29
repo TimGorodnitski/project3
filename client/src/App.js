@@ -1,56 +1,21 @@
 import React from "react";
-import axios from "axios";
-import User from "./components/User";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Header from "./components/Header.js";
+import Resources from "./components/pages/Resources";
+import Home from "./components/pages/Home";
+import Search from "./components/pages/Search";
+import New from "./components/pages/New";
 
-class App extends React.Component {
-  state = {
-    people: []
-  };
-
-  componentDidMount() {
-    // call api for the first time after page load
-    this.getUsers();
-  }
-
-  getUsers = () => {
-    // call api to get three random users and save in state
-    axios.get("https://randomuser.me/api/?results=3&nat=us").then((res) => {
-      this.setState({
-        people: res.data.results
-      });
-    });
-  };
-
-  saveUser = (user) => {
-    // when the "save" button is clicked, save user in db
-    axios.post("/save", {
-      name: `${user.name.first} ${user.name.last}`,
-      email: user.email,
-      zip: user.location.postcode
-    });
-
-    // get three new users
-    this.getUsers();
-  };
-
-  render() {
-    return (
-      <div className="container text-center">
-        <div className="row">
-          {this.state.people.map((p) => {
-            // pass the user object into the child component
-            return (
-              <User 
-                key={p.id.value} 
-                user={p}
-                saveUser={this.saveUser}
-              />
-            );
-          })}
-        </div>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div className="container">
+      <Header/>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/resources" component={Resources} />
+      <Route exact path="/search" component={Search} />
+      <Route exact path="/new" component={New} />
+    </div>
+  </Router>
+);
 
 export default App;
