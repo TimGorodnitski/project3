@@ -4,8 +4,8 @@ import axios from "axios";
 
 class CM extends React.Component{
 	state = {
-		body: "<p>Hello World</p>",
-		title: ""
+		body: this.props.body || "",
+		title: this.props.title || ""
 	}
 
 	handleInputChange = (event) => {
@@ -56,7 +56,7 @@ class CM extends React.Component{
 					placeholder="Snippet Title"
 					className="form-control"
 					/>
-					<CodeMirror value={this.state.body} name="body" onChange={this.updateCode} options={options} />
+					<CodeMirror value={this.state.body} onChange={this.updateCode} options={options} />
 					<button className="btn btn-outline-primary mt-2">Save Snippet</button>
 
 				</form>
