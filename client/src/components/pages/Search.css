@@ -2,3 +2,8 @@
   font-family: 'Inconsolata', monospace;
   color: white;
 }
+
+.snippet-result {
+  margin-bottom: 10px;
+}
+
