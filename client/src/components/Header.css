@@ -2,3 +2,15 @@
   font-family: 'Inconsolata', monospace;
   color: white;
 }
+.nav-link {
+  font-family: 'Inconsolata', monospace;
+  color: white;
+}
+h1 {
+  font-family: 'Inconsolata', monospace;
+  color: white;
+}
+.navbar-nav {
+  float: right;
+  margin-left: auto;
+}
