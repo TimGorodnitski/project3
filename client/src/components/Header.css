@@ -14,3 +14,7 @@ h1 {
   float: right;
   margin-left: auto;
 }
+
+.logo {
+  color: red
+}
