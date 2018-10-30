@@ -1,5 +1,6 @@
 import React from "react";
-import CM from "../CM";
+import CM from "../CM"
+
 // import {Link} from "react-router-dom";
 // import axios from "axios";
 

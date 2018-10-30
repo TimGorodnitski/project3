@@ -2,8 +2,6 @@ import React from 'react';
 import CodeMirror from 'react-codemirror';
 
 
-
-
 class CM extends React.Component{
 	state = {
 		code: "test"
