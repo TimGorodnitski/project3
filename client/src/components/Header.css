@@ -1,20 +1,41 @@
 .header {
-  font-family: 'Inconsolata', monospace;
-  color: white;
+  font-family: 'consolata', monospace;
+}
+
+.nav-link {
+  padding-left: 0px
 }
 .nav-link {
-  font-family: 'Inconsolata', monospace;
-  color: white;
+  font-family: 'consolata', monospace;
+  color: rgb(255, 41, 41);
+  opacity: .75;
+  margin-top: auto;
+  margin-bottom: auto;
 }
+.nav-link:hover {
+  color: rgb(255, 41, 41);
+  opacity: 1;
+  -webkit-text-stroke: .3px black;
+}
+
 h1 {
-  font-family: 'Inconsolata', monospace;
-  color: white;
+  font-family: 'consolata', monospace;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .navbar-nav {
   float: right;
   margin-left: auto;
 }
 
-.logo {
-  color: red
+.navbar {
+  height: 75px;
+  width: 100%;
+  background-color: rgba(24, 24, 26, 0.5)
+}
+
+container {
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
 }
