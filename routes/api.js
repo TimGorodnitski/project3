@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const Person = require("../models/person.js");
+const Snippet = require("../models/snippet.js");
 
 router.post("/save", function(req, res) {
   // as long as req.body matches what the model expects, this should insert into the database
-  Person.create(req.body)
+ Snippet.create(req.body)
   .then(() => {
     res.json(true);
   })
