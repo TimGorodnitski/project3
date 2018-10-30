@@ -34,6 +34,15 @@ body::after {
   height: auto;
 }
 
+#modalSignUp {
+  margin: auto;
+  width: 50%;
+  border: 3px solid red;
+  padding: 10px;
+  height: auto;
+}
+
+
 input{
   width: 100%;
   margin-bottom: 10px;

@@ -5,7 +5,10 @@ import "./Home.css";
 
 class Home extends React.Component {
   state = {
-    styles: {
+    styles1: {
+      display: "none"
+    },
+    styles2: {
       display: "none"
     }
   };
@@ -13,22 +16,41 @@ class Home extends React.Component {
 
   }
 
-  toggleSignInModal = () => {
-    let styles = {
+  toggleSignInModal1 = () => {
+    let styles1 = {
       display: "block"
     }
     
-    if(this.state.styles.display === "none"){
-      this.setState({styles})
+    if(this.state.styles1.display === "none"){
+      this.setState({styles1})
     }
   }
 
-  closeSignInModal = () => {
-    let styles= {
+  closeSignInModal1 = () => {
+    let styles1= {
       display: "none"
     }
-    if(this.state.styles.display === "block"){
-      this.setState({styles})
+    if(this.state.styles1.display === "block"){
+      this.setState({styles1})
+    }
+  }
+
+  toggleSignInModal2 = () => {
+    let styles2 = {
+      display: "block"
+    }
+    
+    if(this.state.styles2.display === "none"){
+      this.setState({styles2})
+    }
+  }
+
+  closeSignInModal2 = () => {
+    let styles2= {
+      display: "none"
+    }
+    if(this.state.styles2.display === "block"){
+      this.setState({styles2})
     }
   }
 
@@ -39,15 +61,25 @@ class Home extends React.Component {
       <div>
         <div>
             <h1 className = "currentPage"> This is the Home page. </h1>
-            <button id="openModal" onClick={this.toggleSignInModal}>Sign In</button>
+            <button id="openModal" onClick={this.toggleSignInModal1}>Sign In</button>
         </div>
-        <div id="modal" style={this.state.styles}>
-        <button id="closeModal" onClick={this.closeSignInModal}>x</button>
+        <div id="modal" style={this.state.styles1}>
+        <button id="closeModal" onClick={this.closeSignInModal1}>x</button>
         <h1>Sign In</h1>
             <input placeholder="Username"></input>
             <input placeholder="Password"></input>
             <button id="submit">Submit</button>
-            <a href="#signup" id="createLink" onClick={this.closeSignInModal}>Create an account</a>
+            <a href="#modalSignUp" id="createLink" onClick={()=>{this.closeSignInModal1();this.toggleSignInModal2()}}>Create an account</a>
+        </div>
+        <div id="modalSignUp" style={this.state.styles2}>
+        <button id="closeModalSignUp" onClick={this.closeSignInModal2}>x</button>
+        <h1>Sign Up</h1>
+        <input placeholder="First Name"></input>
+        <input placeholder="Last Name"></input>
+            <input placeholder="Username"></input>
+            <input placeholder="Password"></input>
+            <button id="submit">Submit</button>
+            <a href="#modal" id="createLink" onClick={()=>{this.closeSignInModal2(); this.toggleSignInModal1()}}>Sign In</a>
         </div>
         
       </div>
