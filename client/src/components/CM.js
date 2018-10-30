@@ -3,9 +3,7 @@ import CodeMirror from 'react-codemirror';
 import axios from "axios";
 
 class CM extends React.Component{
-	constructor(props){
-		super(props)
-	}
+
 
 	state = {
 		body: this.props.body || "",
