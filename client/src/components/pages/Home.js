@@ -16,7 +16,7 @@ class Home extends React.Component {
       <div>
         
         <div>
-            <h1 className = "currentPage"> This is the Home page. </h1>
+            <h1 className = "currentPage"></h1>
         </div>
       </div>
     );
