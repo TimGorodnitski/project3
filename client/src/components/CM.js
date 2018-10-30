@@ -3,9 +3,14 @@ import CodeMirror from 'react-codemirror';
 import axios from "axios";
 
 class CM extends React.Component{
+	constructor(props){
+		super(props)
+	}
+
 	state = {
 		body: this.props.body || "",
-		title: this.props.title || ""
+		title: this.props.title || "",
+		newid: this.props.newid
 	}
 
 	handleInputChange = (event) => {
@@ -13,7 +18,7 @@ class CM extends React.Component{
 		this.setState({
 		  [event.target.name]: event.target.value
 		});
-	  };
+	};
 	
 	updateCode = (newCode) => {
 		this.setState({
@@ -28,14 +33,15 @@ class CM extends React.Component{
 		axios.post("/save", this.state).then((response) => {
 			console.log(response)
 		  if (response.data === true) {
-			alert("Success")
+				alert("Success")
 		  }
 		  // mongoose validation failed
 		  else {
-			alert("Error. Snippet was not created.");
+				alert("Error. Snippet was not created.");
 		  }
 		});
-	  };	
+	};
+	
 
 
 
@@ -45,6 +51,7 @@ class CM extends React.Component{
 		var options = {
 			lineNumbers: true
 		};
+
 		return (
 			<div className="snippet-result">
 				<form className="form" onSubmit={this.submitSnippet}>
@@ -56,16 +63,14 @@ class CM extends React.Component{
 					placeholder="Snippet Title"
 					className="form-control"
 					/>
+					<p>id: {this.state.newid}</p>
 					<CodeMirror value={this.state.body} onChange={this.updateCode} options={options} />
-					<button className="btn btn-outline-primary mt-2">Save Snippet</button>
-
+					<button type="submit" className="btn btn-outline-primary mt-2">Save Snippet</button>
+					<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.props.deleteSnippet(this.state.newid)}> Delete Snippet</button>
 				</form>
-
-
 
 			</div>
 		)
-		
 	}
 };
 
