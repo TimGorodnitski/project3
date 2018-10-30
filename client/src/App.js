@@ -8,7 +8,7 @@ import New from "./components/pages/New";
 
 const App = () => (
   <Router>
-    <div className="container">
+    <div>
       <Header/>
       <Route exact path="/" component={Home} />
       <Route exact path="/resources" component={Resources} />
