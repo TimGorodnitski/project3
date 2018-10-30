@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const Snippet = require("../client/models/Snippet");
+const User = require("../client/models/User");
+
 
 router.post("/save", function(req, res) {
   // as long as req.body matches what the model expects, this should insert into the database
@@ -24,5 +26,7 @@ router.get("/snippets", function(req, res) {
     res.json(err);
   });
 });
+
+
 
 module.exports = router;

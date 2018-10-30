@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 body {
   height: 100%;
   width: 100%;
@@ -20,4 +24,29 @@ body::after {
 .header {
   font-family: 'consolata', monospace;
   color: white;
+}
+
+#modal {
+  margin: auto;
+  width: 50%;
+  border: 3px solid red;
+  padding: 10px;
+  height: auto;
+}
+
+input{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#submit {
+  width: 100%;
+}
+
+#closeModal{
+  float: right;
+}
+
+#createLink{
+  width: auto;
 }
