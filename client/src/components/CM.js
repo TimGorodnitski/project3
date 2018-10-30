@@ -46,7 +46,7 @@ class CM extends React.Component{
 			lineNumbers: true
 		};
 		return (
-			<div>
+			<div className="snippet-result">
 				<form className="form" onSubmit={this.submitSnippet}>
 					<input
 					value={this.state.title}
