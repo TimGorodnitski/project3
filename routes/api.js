@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Snippet = require("../client/models/Snippet");
-const User = require("../client/models/User");
+const User = require("../client/models/Users");
 
 
 router.post("/save", function(req, res) {
@@ -27,7 +27,6 @@ router.get("/snippets", function(req, res) {
   });
 });
 
-<<<<<<< HEAD
 router.delete("/delete/:id", function(req, res) {
 
   console.log(req.params.id)
@@ -42,8 +41,6 @@ router.delete("/delete/:id", function(req, res) {
     });
 });
 
-=======
->>>>>>> idk
 
 
 module.exports = router;
