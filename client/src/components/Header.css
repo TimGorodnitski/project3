@@ -3,19 +3,21 @@
 }
 
 .nav-link {
-  padding-left: 0px
-}
-.nav-link {
   font-family: 'consolata', monospace;
   color: rgb(255, 41, 41);
-  opacity: .75;
+  opacity: .7;
   margin-top: auto;
   margin-bottom: auto;
+  padding-left: 0px;
+  -webkit-text-stroke: .5px rgb(25, 25, 25);
+  transition: 0.2s ease-out;
 }
 .nav-link:hover {
   color: rgb(255, 41, 41);
   opacity: 1;
-  -webkit-text-stroke: .3px black;
+  -webkit-text-stroke: 1.5px ;
+  text-shadow: .3px .3px ;
+  transition: 0.2s ease-in;
 }
 
 h1 {
@@ -31,7 +33,9 @@ h1 {
 .navbar {
   height: 75px;
   width: 100%;
-  background-color: rgba(24, 24, 26, 0.5)
+  background-color: rgba(25, 25, 25, 0.75);
+  border-bottom: 1px solid black;
+
 }
 
 container {
