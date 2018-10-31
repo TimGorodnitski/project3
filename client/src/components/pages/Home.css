@@ -21,3 +21,15 @@ body::after {
   font-family: 'consolata', monospace;
   color: white;
 }
+.jumbotron {
+  background: rgba(172, 164, 164, 0.75);
+}
+.developer {
+  color: rgb(241, 164, 63)
+}
+.blue {
+  color: rgb(7, 92, 172)
+}
+.purple {
+  color: purple;
+}
