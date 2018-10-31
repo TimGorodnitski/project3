@@ -129,7 +129,7 @@ class Home extends React.Component {
     return (
         <div className="container">
             
-            <button id="openModal" onClick={this.toggleSignInModal1}>Sign In</button>
+            <button id="openModal" onClick={this.toggleSignInModal}>Sign In</button>
       
         <div className="jumbotron">
             <h2 className = "currentPage">1 <span className="blue">Created</span> <span className="purple">For
@@ -145,7 +145,7 @@ class Home extends React.Component {
           <input placeholder="Username"></input>
           <input placeholder="Password"></input>
           <button id="submit">Submit</button>
-          <a href="#modalSignUp" id="createLink" onClick={this.toggleSignUpModal}>Create an account</a>
+          <a href="#modalSignUp" id="createLink" onClick={this.toggleSignUpModal}>Create an account </a>
         </div>
         <div id="modalSignUp" style={this.state.currentSignUpModalStyle}>
           <button id="closeModal" onClick={this.toggleSignUpModal}>x</button>
@@ -155,7 +155,7 @@ class Home extends React.Component {
           <input placeholder="Username"></input>
           <input placeholder="Password"></input>
           <button id="submit">Submit</button>
-          <a href="#modal" id="createLink" onClick={this.toggleSignInModal}>Sign In</a>
+          <a href="#modal" id="createLink" onClick={this.toggleSignInModal}>Sign In </a>
         </div>
 
       </div>
