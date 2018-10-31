@@ -65,7 +65,12 @@ input{
   width: auto;
 }
 .jumbotron {
-  background: rgba(172, 164, 164, 0.75);
+  
+  background: linear-gradient( rgb(36, 36, 36), rgb(36, 36, 36) );
+  border-left: .5px solid cyan;
+  border-bottom: .5px solid cyan;
+  border-top: 25px solid whitesmoke;
+  border-right: 17px solid whitesmoke;
 }
 .developer {
   color: rgb(241, 164, 63)
@@ -74,5 +79,18 @@ input{
   color: rgb(7, 92, 172)
 }
 .purple {
-  color: purple;
+  color: rgb(223, 88, 223);
+}
+.green {
+  color: rgb(1, 194, 1);
+}
+.red {
+  color: rgb(255, 41, 41);
+  
+}
+.lightBlue {
+  color: rgb(132, 209, 235);
+}
+.yellow {
+  color: yellow;
 }
