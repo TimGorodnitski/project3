@@ -41,10 +41,6 @@ class CM extends React.Component{
 	};
 	
 
-
-
-
-
 	render() {
 		var options = {
 			lineNumbers: true
