@@ -114,7 +114,7 @@ class Home extends React.Component {
         <div id="modal" style={this.state.styles1}>
           <button id="closeModal" onClick={this.closeSignInModal1}>x</button>
           <h1>Sign In</h1>
-          <form className="login-signup-form" >
+          <form className="login-signup-form" onSubmit={()=>{this.handleLogIn()}}>
             <input type="text" name="username" placeholder="Username" onChange={this.handleInputChange} autoFocus />
             <input type="password" name="password" placeholder="Password" onChange={this.handleInputChange} />
             <button className="success-button" id="submit" type="submit">Login</button>
