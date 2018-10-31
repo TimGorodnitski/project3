@@ -16,11 +16,7 @@ body {
 
 body::after {
   content: "";
-<<<<<<< HEAD
-  background: linear-gradient( rgba(0, 0, 0, 2.0), rgba(0, 0, 0, 0.5) ), url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/1-nzoRO/javascript-code-on-dark-editor-background-shot-close-up-while-scrolling-the-page-and-randomly-changing-focus-point_hpgulg8gx__F0000.png") center no-repeat;
-=======
-  background: linear-gradient(rgba(0,0,0,0.75),rgba(0, 0, 0, 0.75)), url("https://pace.oregonstate.edu/sites/default/files/styles/course_banner_large/public/images/course/cover/pace-oregon-state-html-css-coding-web-design.jpg?itok=tNEZncCn") center no-repeat;
->>>>>>> stylingKyle
+  background: linear-gradient(rgba(0,0,0,0.75),rgba(0, 0, 0, 0.75)), url("https://pace.oregonstate.edu/sites/default/files/styles/course_banner_large/public/images/course/cover/pace-oregon-state-html-css-coding-web-design.jpg") center no-repeat;
   background-size: cover;
   top: 0;
   left: 0;
