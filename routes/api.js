@@ -68,11 +68,19 @@ router.delete("/delete/:id", function(req, res) {
 //   res.render('signup', {user: req.user, errors: errorsArray});
 // });
 
-router.post('/login', passport.authenticate('local', {
-  successRedirect: '/search',
-  failureRedirect: '/',
-  failureFlash: true
-}));
+router.post('/login', passport.authenticate('local'), 
+  function(req, res) {
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+    res.json(req.user);
+  })
+
+
+// {
+//   successRedirect: '/search',
+//   failureRedirect: '/',
+//   failureFlash: true
+// ;
 
 router.post('/signup', (req, res, next) => {
   console.log("/signup post: " + req.body);

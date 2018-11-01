@@ -12,11 +12,14 @@ class Home extends React.Component {
       display: "none"
     },
     username: "",
-    password: ""
+    password: "",
+    currentUser: ""
   };
-  componentDidMount() {
 
+  componentDidMount() {
+    this.checkUser();
   }
+  
 
   toggleSignInModal1 = () => {
     let styles1 = {
@@ -64,7 +67,7 @@ class Home extends React.Component {
 	};
 
   handleSignUp = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     // send the entire state object to the back-end
     console.log("Attempting signup with state: " + this.state.username + " " + this.state.password)
 		axios.post("/signup", this.state).then((response) => {
@@ -80,13 +83,16 @@ class Home extends React.Component {
   };
   
   handleLogIn = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     // send the entire state object to the back-end
     console.log("Attempting login with state: " + this.state.username + " " + this.state.password)
 		axios.post("/login", this.state).then((response) => {
 			console.log(response.data);
-		  if (response.data === true) {
-				alert("Logged In!")
+		  if (response.data.username) {
+        var currentUser = response.data.username;
+        this.setState({currentUser});
+        this.checkUser();
+				alert("Logged In!");
 		  }
 		  // mongoose validation failed
 		  else {
@@ -95,13 +101,29 @@ class Home extends React.Component {
 		});
 	};
 
+  welcomeMessage;
+
+  checkUser = () => {
+    if(this.state.currentUser){
+      this.welcomeMessage = 
+      <div>
+        <h1>Welcome, {this.state.currentUser}</h1>
+      </div>
+    } else{
+      this.welcomeMessage = <div><p>Please log in</p></div>
+    }
+    this.forceUpdate();
+  };
+
 
   render() {
 
+
+
     return (
-        <div>
-            
-            <button id="openModal" onClick={this.toggleSignInModal1}>Sign In</button>
+      <div>
+        {this.welcomeMessage}
+        <button id="openModal" onClick={this.toggleSignInModal1}>Sign In</button>
         
         <div className="jumbotron">
             <h1 className = "currentPage"><span className="blue">Created</span> <span className="purple">For</span> (<span className="developer">Developers</span>) <span className="purple">By</span> [<span className="developer">Developers</span>];</h1>
@@ -114,7 +136,7 @@ class Home extends React.Component {
         <div id="modal" style={this.state.styles1}>
           <button id="closeModal" onClick={this.closeSignInModal1}>x</button>
           <h1>Sign In</h1>
-          <form className="login-signup-form" onSubmit={()=>{this.handleLogIn()}}>
+          <form className="login-signup-form" onSubmit={(event)=>{this.handleLogIn(event)}}>
             <input type="text" name="username" placeholder="Username" onChange={this.handleInputChange} autoFocus />
             <input type="password" name="password" placeholder="Password" onChange={this.handleInputChange} />
             <button className="success-button" id="submit" type="submit">Login</button>
@@ -125,7 +147,7 @@ class Home extends React.Component {
         <div id="modalSignUp" style={this.state.styles2}>
           <button id="closeModalSignUp" onClick={this.closeSignInModal2}>x</button>
           <h1>Sign Up</h1>
-          <form className="login-signup-form" onSubmit={()=>{this.handleSignUp()}}>
+          <form className="login-signup-form" onSubmit={(event)=>{this.handleSignUp(event)}}>
             <input type="text" name="username" placeholder="Username" onChange={this.handleInputChange} autoFocus />
             <input type="password" name="password" placeholder="Password" onChange={this.handleInputChange} />
             <button className="success-button" type="submit">Sign Up</button>
