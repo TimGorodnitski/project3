@@ -57,7 +57,6 @@ class CM extends React.Component{
 					placeholder="Snippet Title"
 					className="form-control"
 					/>
-					<p>id: {this.state.newid}</p>
 					<CodeMirror value={this.state.body} onChange={this.updateCode} options={options} />
 					<button type="submit" className="btn btn-outline-primary mt-2">Save Snippet</button>
 					<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.props.deleteSnippet(this.state.newid)}> Delete Snippet</button>
