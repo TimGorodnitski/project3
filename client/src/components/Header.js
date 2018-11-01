@@ -41,9 +41,6 @@ var h1Style = {
   color: "white"
 }
 
-var navStyle = {
-  width: "100px"
-}
 
 var logo = {
   width: "75px",
@@ -71,31 +68,61 @@ var loginStyle = {
 }
 
 
-const Header = () => {
-  return (
-    <div>
-    <nav className="navbar navbar-dark bg-none">
-    <header className="row" style={headerStyle}>
+class Header extends React.Component {
+  constructor(props){
+    super(props)
+  }
 
-    <img className="logoIMG" style={logo} src = "https://png.pngtree.com/png_detail/18/09/10/pngtree-Initial-Letter-BH-Logo-Design-png-clipart_3579590.jpg"></img>
+  state={
+    currentUser: this.props.username,
+  }
+  
+  welcomeMessage;
 
-      <h1 style={h1Style}><Link to="/" className="nav-link">BitHub</Link></h1>
-      <div className="navbar-nav" style={navbarStyle}>
-      
-      <Link to="/resources" className="nav-link navLink" style={linkStyle}>Resources</Link>
-      
-      <Link to="/search" className="nav-link navLink" style={linkstyle}>Search</Link>
-      
-      <Link to="/new" className="nav-link navLink" style={LinkStyle}>New Snippet</Link>
-      <img className = "loginIMG" style={loginStyle} src="https://static.thenounproject.com/png/23665-200.png"></img>
+  componentDidMount() {
+    this.checkUser();
+  }
+  
 
+  checkUser = () => {
+    if(this.state.currentUser){
+      this.welcomeMessage = 
+      <div>
+        <h1>Welcome, {this.state.currentUser}</h1>
       </div>
-      </header>
-      </nav>
-      </div>
-  )}
+    } else{
+      this.welcomeMessage = <div><p>Please log in</p></div>
+    }
+    this.forceUpdate();
+  };
 
+  render(){
+      return (
+        <div>
+          <nav className="navbar navbar-dark bg-none">
+            <header className="row" style={headerStyle}>
 
+              <img className="logoIMG" style={logo} src = "https://png.pngtree.com/png_detail/18/09/10/pngtree-Initial-Letter-BH-Logo-Design-png-clipart_3579590.jpg"></img>
+
+              <h1 style={h1Style}><Link to="/" className="nav-link">BitHub</Link></h1>
+              <div className="navbar-nav" style={navbarStyle}>
+
+                {this.welcomeMessage}
+
+                <Link to="/resources" className="nav-link navLink" style={linkStyle}>Resources</Link>
+                
+                <Link to="/search" className="nav-link navLink" style={linkstyle}>Search</Link>
+                
+                <Link to="/new" className="nav-link navLink" style={LinkStyle}>New Snippet</Link>
+                <img className = "loginIMG" style={loginStyle} src="https://static.thenounproject.com/png/23665-200.png"></img>
+
+              </div>
+            </header>
+          </nav>
+        </div>
+      )
+  }
+}
 
 
 

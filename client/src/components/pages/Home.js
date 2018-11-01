@@ -4,6 +4,10 @@ import "./Home.css";
 import axios from "axios";
 
 class Home extends React.Component {
+  constructor(props){
+    super(props)
+  }
+
   state = {
     styles1: {
       display: "none"
@@ -17,7 +21,6 @@ class Home extends React.Component {
   };
 
   componentDidMount() {
-    this.checkUser();
   }
   
 
@@ -90,8 +93,7 @@ class Home extends React.Component {
 			console.log(response.data);
 		  if (response.data.username) {
         var currentUser = response.data.username;
-        this.setState({currentUser});
-        this.checkUser();
+        this.setState({currentUser}, () => this.props.passData("username", this.state.currentUser));
 				alert("Logged In!");
 		  }
 		  // mongoose validation failed
@@ -99,20 +101,6 @@ class Home extends React.Component {
 				alert("Error. Not Logged in.");
 		  }
 		});
-	};
-
-  welcomeMessage;
-
-  checkUser = () => {
-    if(this.state.currentUser){
-      this.welcomeMessage = 
-      <div>
-        <h1>Welcome, {this.state.currentUser}</h1>
-      </div>
-    } else{
-      this.welcomeMessage = <div><p>Please log in</p></div>
-    }
-    this.forceUpdate();
   };
 
 
@@ -122,7 +110,7 @@ class Home extends React.Component {
 
     return (
       <div>
-        {this.welcomeMessage}
+
         <button id="openModal" onClick={this.toggleSignInModal1}>Sign In</button>
         
         <div className="jumbotron">
