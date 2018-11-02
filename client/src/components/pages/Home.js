@@ -4,9 +4,7 @@ import "./Home.css";
 import axios from "axios";
 
 class Home extends React.Component {
-  constructor(props){
-    super(props)
-  }
+ 
 
   state = {
     styles1: {

@@ -3,10 +3,6 @@ import CodeMirror from 'react-codemirror';
 import axios from "axios";
 
 class CMresult extends React.Component{
-	constructor(props){
-		super(props)
-	}
-	
 
 	state = {
 		body: this.props.data.body || "",

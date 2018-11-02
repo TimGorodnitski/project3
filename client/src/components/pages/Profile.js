@@ -1,7 +1,6 @@
 import React from "react";
 import "./Profile.css";
 import CMresult from "../CMresult";
-// import {Link} from "react-router-dom";
 import axios from "axios";
 
 class Profile extends React.Component {

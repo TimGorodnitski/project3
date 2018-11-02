@@ -6,9 +6,7 @@ import CM from "../CM";
 // import axios from "axios";
 
 class New extends React.Component {
-  constructor(props){
-		super(props)
-  }
+
   
   state = {
   };

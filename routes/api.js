@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const router = require("express").Router();
-const Snippet = require("../client/models/Snippet");
+const Snippet = require("../models/Snippet");
 var User = mongoose.model('User');
 const passport = require('passport');
 

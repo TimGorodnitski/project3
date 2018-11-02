@@ -1,7 +1,6 @@
 import React from "react";
 import "./Resources.css";
-// import {Link} from "react-router-dom";
-// import axios from "axios";
+
 
 class Resources extends React.Component {
   state = {

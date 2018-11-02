@@ -1,7 +1,6 @@
 import React from "react";
 import "./Search.css";
 import CMresult from "../CMresult";
-// import {Link} from "react-router-dom";
 import axios from "axios";
 
 class Search extends React.Component {
