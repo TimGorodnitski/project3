@@ -21,7 +21,7 @@ class App extends React.Component {
   render(){
     return (
       <Router>
-        <div className="Navcontainer">
+        <div className="container">
           <Header currentUser={this.state.currentUser}  />
           <Route exact path="/" component={()=> <Home passData={this.passData} />}  />
           <Route exact path="/resources" component={Resources} />

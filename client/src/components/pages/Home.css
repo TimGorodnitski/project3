@@ -1,9 +1,9 @@
 html {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
-  height: 100%;
+  height: auto;
   width: 100%;
   position: relative;
   display: block;
@@ -17,8 +17,9 @@ body {
 
 body::after {
   content: "";
-  background: linear-gradient(rgba(0,0,0,0.75),rgba(0, 0, 0, 0.75)), url("https://pace.oregonstate.edu/sites/default/files/styles/course_banner_large/public/images/course/cover/pace-oregon-state-html-css-coding-web-design.jpg") center no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.75),rgba(0, 0, 0, 0.75)), url("https://pace.oregonstate.edu/sites/default/files/styles/course_banner_large/public/images/course/cover/pace-oregon-state-html-css-coding-web-design.jpg") center;
   background-size: cover;
+  background-repeat: repeat-y;
   top: 0;
   left: 0;
   bottom: 0;
