@@ -115,13 +115,18 @@ class Home extends React.Component {
 
         <button id="openModal" onClick={this.toggleSignInModal1}>Sign In</button>
         
-        <div className="jumbotron">
-            <h1 className = "currentPage"><span className="blue">Created</span> <span className="purple">For</span> (<span className="developer">Developers</span>) <span className="purple">By</span> [<span className="developer">Developers</span>];</h1>
-            <br></br>
-            <h3 className = "currentPage">bitHub is the latest tool for developers to share knowledge with their community. 
-            Here, you can save your best code for all aspiring developers to use and learn from. 
-            You will become an integral part in both the enriching and the growth of developers everywhere.</h3>
+        <div className="row">
+        <div className="col-md-7">
+        <div className="jumbotron shadow-lg  p-3 mb-5">
+            <h5 className = "currentPage">1 <span className="blue">Created</span> <span className="purple">For
+            </span> (<span className="developer">Developers</span>) <span className="purple">By</span> [<span className="developer">Developers</span>] <span className="blue">=></span> &#123;</h5>
+            {/*first sentence*/}
+            <h6 className = "currentPage">2 <br></br>3 &#60;<span className="red">BitHub</span> <span className="yellow">is</span> the latest <span className="blue">tool</span> <span className="purple">for</span> <span className="developer">developers</span> to <span className="blue">spread</span><br></br>4 <span className="lightBlue">knowledge</span> within their <span className="lightBlue">community</span>/&#62;; <br></br>5 <br></br>{/*second sentence*/}
+            6 &#60;<span className="blue">Here</span>, you can <span className="yellow">save</span> and <span className="yellow">share</span> your <span className="blue">best</span> <span className="lightBlue">code</span> <span className="purple">for</span> all <span className="purple">aspiring</span> <br></br>7 <span className="developer">developers</span> across the <span className="lightBlue">globe</span>/&#62;;<br></br>8 <br></br>{/*third sentence*/}
+            9 &#60;<span className="blue">You</span> will <span className="yellow">become</span> an <span className="purple">integral</span> <span className="lightBlue">part</span> in both the <br></br>10 <span className="lightBlue">enrichment</span> and the <span className="lightBlue">growth</span> of <span className="developer">developers</span> <span className="lightBlue">everywhere</span>/&#62;;<br></br>11 <br></br>12 &#125;;</h6>
         </div>
+      </div>
+    </div>
 
         <div id="modal" style={this.state.styles1}>
           <button id="closeModal" onClick={this.closeSignInModal1}>x</button>
