@@ -74,27 +74,12 @@ class Header extends React.Component {
   }
 
   state={
-    currentUser: this.props.username,
   }
-  
-  welcomeMessage;
+
 
   componentDidMount() {
-    this.checkUser();
   }
   
-
-  checkUser = () => {
-    if(this.state.currentUser){
-      this.welcomeMessage = 
-      <div>
-        <h1>Welcome, {this.state.currentUser}</h1>
-      </div>
-    } else{
-      this.welcomeMessage = <div><p>Please log in</p></div>
-    }
-    this.forceUpdate();
-  };
 
   render(){
       return (
@@ -107,14 +92,16 @@ class Header extends React.Component {
               <h1 style={h1Style}><Link to="/" className="nav-link">BitHub</Link></h1>
               <div className="navbar-nav" style={navbarStyle}>
 
-                {this.welcomeMessage}
+                
 
                 <Link to="/resources" className="nav-link navLink" style={linkStyle}>Resources</Link>
                 
                 <Link to="/search" className="nav-link navLink" style={linkstyle}>Search</Link>
                 
                 <Link to="/new" className="nav-link navLink" style={LinkStyle}>New Snippet</Link>
+                
                 <img className = "loginIMG" style={loginStyle} src="https://static.thenounproject.com/png/23665-200.png"></img>
+                {this.props.username}
 
               </div>
             </header>
