@@ -1,6 +1,6 @@
 import React from "react";
 import "./Search.css";
-import CM from "../CM";
+import CMresult from "../CMresult";
 // import {Link} from "react-router-dom";
 import axios from "axios";
 
@@ -43,7 +43,7 @@ class Search extends React.Component {
             this.state.results.map((item) => {
               // create a route-able link for each product
               return (
-                <CM key={item._id} newid={item._id} body={item.body} title={item.title} deleteSnippet={this.deleteSnippet} options={options}/>
+                <CMresult key={item._id} data={item} deleteSnippet={this.deleteSnippet} options={options}/>
               );
             })
           }
