@@ -27,6 +27,18 @@ router.get("/snippets", function(req, res) {
   });
 });
 
+router.get("/snippets/:user", function(req, res) {
+  // as long as req.body matches what the model expects, this should insert into the database
+ Snippet.find({creator: req.params.user})
+  .then((mySnippets) => {
+    res.json(mySnippets);
+  })
+  .catch((err) => {
+    // if not, we can at least catch the error
+    res.json(err);
+  });
+});
+
 router.delete("/delete/:id", function(req, res) {
 
   console.log(req.params.id)

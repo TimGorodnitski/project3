@@ -1,8 +1,8 @@
 import React from "react";
+import "./Profile.css";
 import CMresult from "../CMresult";
 // import {Link} from "react-router-dom";
 import axios from "axios";
-
 
 class Profile extends React.Component {
   state = {
@@ -10,11 +10,14 @@ class Profile extends React.Component {
   };
 
   componentDidMount() {
-    axios.get("/snippets").then((response) => {
+    axios.get("/snippets/" + this.props.currentUser).then((response) => {
+
       console.log(response.data);
+
       this.setState({
         results: response.data
       });
+
     });
   }
 
@@ -22,12 +25,12 @@ class Profile extends React.Component {
 		console.log("delete _id: " + id)
 		// send the entire state object to the back-end
 		axios.delete("/delete/" + id).then((response) => {
-      axios.get("/snippets").then((response) => {
-        console.log(response.data);
-        this.setState({
-          results: response.data
+            axios.get("/snippets").then((response) => {
+                console.log(response.data);
+                this.setState({
+                results: response.data
+            });
         });
-      });
 		});
 	};
 
@@ -38,7 +41,7 @@ class Profile extends React.Component {
     
     return (
       <div>
-          <h1> This your profile page. </h1>
+          <h1> {this.props.currentUser}'s Profile </h1>
           {
             this.state.results.map((item) => {
               // create a route-able link for each product
