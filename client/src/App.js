@@ -26,7 +26,6 @@ class App extends React.Component {
           <Header currentUser={this.state.currentUser} />
           <Route exact path="/" component={()=> <Home passData={this.passData} />} />
           <Route exact path="/resources" component={Resources} />
-          <Route exact path="/profile" component={Profile} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/profile" component={()=> <Profile currentUser={this.state.currentUser} />} />
           <Route  exact path="/new" component={()=> <New currentUser={this.state.currentUser} />} />
