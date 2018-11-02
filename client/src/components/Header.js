@@ -48,25 +48,24 @@ var navStyle = {
 var logo = {
   width: "75px",
   height: "75px",
-  opacity: "0.9",
+  opacity: "0.5",
   marginTop: "2px",
   padding: "5px",
   cursor: "pointer",
-  backgroundColor: "rgba(25, 25, 25, 0)",
-  borderRadius: "50%",
+  backgroundColor: "rgba(25, 25, 25)"
   
 }
 
 var loginStyle = {
   height: "50px",
   width: "50px",
-  backgroundColor: "grey",
-  marginLeft: "20px",
+  backgroundColor: "gray",
+  marginLeft: "25px",
   marginTop: "15px",
   marginBottom: "15px",
   borderRadius: "50%",
   cursor: "pointer",
-  border: "2px solid black"
+  border: "1px solid black"
 
 }
 

@@ -38,15 +38,15 @@ class Home extends React.Component {
     display: "block",  /* Hidden by default */
     position: "fixed",  /* Stay in place */
     zIndex: 1,  /* Sit on top */
-    left: 310,
+    left: "50%",
     top: 109,
     width: "50%", /* Full width */
     height: "70%",  /* Full height */
     overflow: "auto",  /* Enable scroll if needed */
     backgroundColor: "white",
     margin: "0 auto",
-    borderRadius: "10px"
-
+    borderRadius: "10px",
+    marginLeft: "-25%"
   }
 
 
@@ -128,7 +128,6 @@ class Home extends React.Component {
 
     return (
         <div className="container">
-            
             <button id="openModal" onClick={this.toggleSignInModal}>Sign In</button>
       <div className="row">
         <div className="col-md-7">
@@ -147,7 +146,9 @@ class Home extends React.Component {
           <h1>Sign In</h1>
           <input placeholder="Username"></input>
           <input placeholder="Password"></input>
+          <br></br>
           <button id="submit">Submit</button>
+          <br></br>
           <a href="#modalSignUp" id="createLink" onClick={this.toggleSignUpModal}>Create an account </a>
         </div>
         <div id="modalSignUp" style={this.state.currentSignUpModalStyle}>
@@ -157,7 +158,9 @@ class Home extends React.Component {
           <input placeholder="Last Name"></input>
           <input placeholder="Username"></input>
           <input placeholder="Password"></input>
+          <br></br>
           <button id="submit">Submit</button>
+          <br></br>
           <a href="#modal" id="createLink" onClick={this.toggleSignInModal}>Sign In </a>
         </div>
 

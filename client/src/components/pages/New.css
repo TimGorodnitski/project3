@@ -2,3 +2,43 @@
   font-family: 'consolata', monospace;
   color: white;
 }
+
+.form {
+  width: 75%;
+  margin: auto;
+  padding-top: 25px;
+  /* caret-color: red */
+}
+
+.form-control {
+  width: 25%;
+  margin-bottom: 25px;
+  border: 1px solid black;
+}
+
+.btn-outline-primary {
+  margin-right: 15px;
+}
+
+.snippet-result {
+ margin-bottom: 25px;
+}
+
+.CodeMirror {
+  height: 600px;
+}
+
+.CodeMirror-scroll {
+  cursor: text;
+  padding-bottom: 0px;
+  background-color: black;
+  border-top: 8px solid white;
+  width: 100%;
+  color: whitesmoke;
+}
+
+.CodeMirror-cursor {
+  width: 5px;
+  background-color: white;
+  border: none;
+}
