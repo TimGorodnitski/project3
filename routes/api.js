@@ -6,8 +6,13 @@ const passport = require('passport');
 
 
 router.post("/save", function(req, res) {
+
+  let d = new Date();
+  req.body.createdAt = d.toDateString();
+  const snippet = req.body;
+
   // as long as req.body matches what the model expects, this should insert into the database
- Snippet.create(req.body)
+ Snippet.create(snippet)
   .then(() => {
     res.json(true);
   })
