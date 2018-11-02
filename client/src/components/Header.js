@@ -100,7 +100,7 @@ class Header extends React.Component {
                 
                 <Link to="/new" className="nav-link navLink" style={LinkStyle}>New Snippet</Link>
                 
-                <img className = "loginIMG" style={loginStyle} src="https://static.thenounproject.com/png/23665-200.png"></img>
+                <img className = "loginIMG" style={loginStyle} href="/profile" src="https://static.thenounproject.com/png/23665-200.png"></img>
                 {this.props.currentUser}
 
               </div>
