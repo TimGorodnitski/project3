@@ -5,7 +5,6 @@ import Resources from "./components/pages/Resources";
 import Profile from "./components/pages/Profile";
 import Home from "./components/pages/Home";
 import Search from "./components/pages/Search";
-import Profile from "./components/pages/Profile";
 import New from "./components/pages/New";
 import "./components/pages/Home.css"
 
