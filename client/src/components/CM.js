@@ -3,12 +3,16 @@ import CodeMirror from 'react-codemirror';
 import axios from "axios";
 
 class CM extends React.Component{
-
+	constructor(props){
+		super(props)
+	}
+	
 
 	state = {
 		body: this.props.body || "",
 		title: this.props.title || "",
-		newid: this.props.newid
+		newid: this.props.newid,
+		creator: this.props.currentUser
 	}
 
 	handleInputChange = (event) => {
@@ -59,7 +63,7 @@ class CM extends React.Component{
 					/>
 					<CodeMirror value={this.state.body} onChange={this.updateCode} options={options} />
 					<button type="submit" className="btn btn-outline-primary mt-2">Save Snippet</button>
-					<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.props.deleteSnippet(this.state.newid)}> Delete Snippet</button>
+					<button type="button" className="btn btn-outline-primary mt-2"  onClick={() => this.props.deleteSnippet(this.state.newid)}> Delete Snippet</button>
 				</form>
 
 			</div>

@@ -22,11 +22,11 @@ class App extends React.Component {
     return (
       <Router>
         <div className="Navcontainer">
-          <Header username={this.state.username}  />
+          <Header currentUser={this.state.currentUser}  />
           <Route exact path="/" component={()=> <Home passData={this.passData} />}  />
           <Route exact path="/resources" component={Resources} />
           <Route exact path="/search" component={Search} />
-          <Route exact path="/new" component={New} />
+          <Route  exact path="/new" component={()=> <New currentUser={this.state.currentUser} />} />
         </div>
       </Router>
 

@@ -93,7 +93,7 @@ class Home extends React.Component {
 			console.log(response.data);
 		  if (response.data.username) {
         var currentUser = response.data.username;
-        this.setState({currentUser}, () => this.props.passData("username", this.state.currentUser));
+        this.setState({currentUser}, () => this.props.passData("currentUser", this.state.currentUser));
 				alert("Logged In!");
 		  }
 		  // mongoose validation failed
