@@ -51,27 +51,6 @@ router.delete("/delete/:id", function(req, res) {
 
 // Authentication Routing
 
-router.get('/login', (req, res) => {
-  const flashMessages = res.locals.getMessages();
-  console.log(flashMessages);
-
-  if (flashMessages.error) {
-    res.render('login', {
-      showErrors: true,
-      errors: flashMessages.error
-    });
-  } else {
-    res.render('login', {user: req.user, errors: []});
-  }
-});
-
-router.get('/signup', (req, res) => {
-  const flashMessages = res.locals.getMessages();
-  console.log('FLASH MESSAGES========================', flashMessages.error);
-  let errorsArray = flashMessages.error || [];
-  console.log('value to be passed in', errorsArray);
-  res.render('signup', {user: req.user, errors: errorsArray});
-});
 
 router.post('/login', passport.authenticate('local'), 
   function(req, res) {

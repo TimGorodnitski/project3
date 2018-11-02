@@ -75,7 +75,9 @@ class Home extends React.Component {
     console.log("Attempting signup with state: " + this.state.username + " " + this.state.password)
 		axios.post("/signup", this.state).then((response) => {
 			console.log(response)
-		  if (response.data === true) {
+		  if (response.status === 200) {
+        let currentUser = this.state.username;
+        this.setState({currentUser}, () => this.props.passData("currentUser", this.state.currentUser));
 				alert("Signed up!")
 		  }
 		  // mongoose validation failed
