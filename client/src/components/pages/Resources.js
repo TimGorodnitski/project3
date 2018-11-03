@@ -3,14 +3,17 @@ import "./Resources.css";
 import axios from "axios";
 import cheerio from "cheerio";
 import Card from "../Card";
-import Notebook from "../Notebook";
+import Notebook from "../Notebook"
 
 
 class Resources extends React.Component {
   state = {
     results: [],
-    note:[]
+    note: [],
+
   };
+
+
 
 
   componentDidMount = () => {
@@ -32,28 +35,28 @@ class Resources extends React.Component {
           .attr("href");
 
         // console.log(result) //Successful
-         
+
         axios.post("/scrape", result);
         // temparray.push(result);
       })
     })
+ this.getNote();
     this.getData(() => {
       this.forceUpdate()
     });
-       
-
-
-
     ////// End of scrape ///////
-
-
-
   };
+  getNote = () => {
+    axios.get("/notecreated").then((response) => {
+      console.log(response.data);
+      this.setState({
+        note: response.data
+      });
+    });
+  }
 
+  getData = (cb) => {
 
-
-  getData =(cb) =>{
- 
     axios.get("/articles").then((res) => {
       console.log(res)
       this.setState({
@@ -63,23 +66,19 @@ class Resources extends React.Component {
       })
 
     })
-  }; 
-
-  
-
+  };
 
   clickMe = () => {
-    this.getData((response)=>{
+    this.getData((response) => {
       this.setState({
-        results: response.sort(function(a, b){
-          if(a.title < b.title) { return -1; }
-          if(a.title > b.title) { return 1; }
+        results: response.sort(function (a, b) {
+          if (a.title < b.title) { return -1; }
+          if (a.title > b.title) { return 1; }
           return 0;
         })
       });
     });
   }
-
 
   render() {
 
@@ -89,6 +88,14 @@ class Resources extends React.Component {
         <h1 className="currentPage"> This is the Resources page. </h1>
         <button id="button" className="btn btn-outline-primary btn-sm"
           onClick={this.clickMe} >Sort Article!</button>
+
+        {this.state.note.map((memo) => {
+          return (
+            <Notebook body={memo.body} />
+          );
+        })
+        }
+
         {
           this.state.results.map((item) => {
             // create a route-able link for each product
@@ -96,15 +103,6 @@ class Resources extends React.Component {
               <Card title={item.title} link={item.link} />
             );
           })
-        }
-        {this.state.note.map((memo)=>{
-          return(
-
-          <Notebook noteTitle={memo.noteTitle} body={memo.body}/>
-
-          );
-        })
-
         }
 
       </div>

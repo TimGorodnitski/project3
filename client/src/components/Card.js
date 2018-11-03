@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import Notebook from "./Notebook";
+
 
 class Card extends React.Component {
     state = {
@@ -19,7 +21,7 @@ class Card extends React.Component {
                 padding: "0 20px"
             },
             link: {
-                padding: 20
+                background:"#00FF00"
             }
         }
     };
@@ -30,6 +32,23 @@ class Card extends React.Component {
         });
     };
 
+	likeArticle = (event) => {
+		event.preventDefault();
+		
+		// send the entire state object to the back-end
+		axios.post("/likeArticle", this.state).then((response) => {
+			console.log(response)
+		  if (response.data === true) {
+				alert("Success")
+		  }
+		  // mongoose validation failed
+		  else {
+				alert("likePage to db");
+		  }
+        });
+        
+    
+	};
 
 	submitNote = (event) => {
 		event.preventDefault();
@@ -58,11 +77,11 @@ class Card extends React.Component {
                     <ul>
                         <div>
                             <li style={this.state.styles.title}>
-                                <strong>Title:{this.props.notetitle}</strong>
+                                <strong>Title:  {this.props.title}</strong>
                             </li>
 
                             <li style={this.state.styles.link}>
-                                <strong>Link:<a href={this.props.link} target="_blank">{this.props.link}</a></strong>
+                                <strong>Link:  <a href={this.props.link} target="_blank">{this.props.link}</a></strong>
                             </li>
                         </div>
                     </ul>
@@ -85,8 +104,14 @@ class Card extends React.Component {
                     </div>
 
                     <button className="btn btn-outline-primary mt-2" onClick={this.submitNote}>AddComment</button>
-                    <button className="btn btn-outline-primary mt-2">LikeArticle</button>
+                    <button className="btn btn-outline-primary mt-2" onClick={this.likeArticle}>LikeArticle</button>
                 </div>
+                <div>
+                    <h1>Notes</h1>
+                    <Notebook noteTitle={this.props.title} />
+                </div>
+
+
 
             </div>
 
