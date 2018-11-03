@@ -34,14 +34,13 @@ class Card extends React.Component {
 
 	likeArticle = (event) => {
 		event.preventDefault();
-		
-		// send the entire state object to the back-end
+	
 		axios.post("/likeArticle", this.state).then((response) => {
 			console.log(response)
 		  if (response.data === true) {
 				alert("Success")
 		  }
-		  // mongoose validation failed
+		
 		  else {
 				alert("likePage to db");
 		  }

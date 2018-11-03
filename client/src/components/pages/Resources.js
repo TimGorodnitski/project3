@@ -10,6 +10,7 @@ class Resources extends React.Component {
   state = {
     results: [],
     note: [],
+    likeArticle :[]
 
   };
 

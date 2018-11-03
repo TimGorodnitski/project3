@@ -39,6 +39,19 @@ router.post("/note", function(req, res) {
   });
 });
 
+router.post("/likeArticle", function(req, res) {
+
+
+ Note.create(notes)
+  .then(() => {
+    res.json(true);
+  })
+  .catch((err) => {
+    // if not, we can at least catch the error
+    res.json(err);
+  });
+});
+
 router.get("/notecreated", function(req, res) {
  Note.find()
   .then((allNote) => {
