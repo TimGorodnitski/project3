@@ -19,9 +19,8 @@ const snippetSchema = new Schema({
     type: String,
     required: true
   },
-  notes: String,
   language: String,
-  tags: []
+  public: Boolean
 });
 
 const Snippet = mongoose.model("Snippet", snippetSchema);

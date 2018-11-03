@@ -8,7 +8,8 @@ class CM extends React.Component{
 		body: this.props.body || "",
 		title: this.props.title || "",
 		newid: this.props.newid,
-		creator: this.props.currentUser
+		creator: this.props.currentUser,
+		public: this.props.public || true
 	}
 
 	handleInputChange = (event) => {
@@ -58,8 +59,10 @@ class CM extends React.Component{
 					className="form-control"
 					/>
 					<CodeMirror value={this.state.body} onChange={this.updateCode} options={options} />
+					<h3>Private Snippet:<input type="checkbox" name="private" value="false"></input></h3>
 					<button type="submit" className="btn btn-outline-primary mt-2">Save Snippet</button>
 					<button type="button" className="btn btn-outline-primary mt-2"  onClick={() => this.props.deleteSnippet(this.state.newid)}> Delete Snippet</button>
+
 				</form>
 
 			</div>
