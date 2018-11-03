@@ -1,19 +1,22 @@
 import React from "react";
-import "./Search.css";
+import "./Profile.css";
 import CMresult from "../CMresult";
 import axios from "axios";
 
-class Search extends React.Component {
+class Profile extends React.Component {
   state = {
     results: []
   };
 
   componentDidMount() {
-    axios.get("/snippets").then((response) => {
+    axios.get("/snippets/" + this.props.currentUser).then((response) => {
+
       console.log(response.data);
+
       this.setState({
         results: response.data
       });
+
     });
   }
 
@@ -21,12 +24,12 @@ class Search extends React.Component {
 		console.log("delete _id: " + id)
 		// send the entire state object to the back-end
 		axios.delete("/delete/" + id).then((response) => {
-      axios.get("/snippets").then((response) => {
-        console.log(response.data);
-        this.setState({
-          results: response.data
+            axios.get("/snippets").then((response) => {
+                console.log(response.data);
+                this.setState({
+                results: response.data
+            });
         });
-      });
 		});
 	};
 
@@ -37,7 +40,7 @@ class Search extends React.Component {
     
     return (
       <div>
-          <h1> This is the Search page. </h1>
+          <h1> {this.props.currentUser}'s Profile </h1>
           {
             this.state.results.map((item) => {
               // create a route-able link for each product
@@ -51,4 +54,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default Profile;

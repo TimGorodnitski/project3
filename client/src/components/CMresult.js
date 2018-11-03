@@ -2,13 +2,14 @@ import React from 'react';
 import CodeMirror from 'react-codemirror';
 import axios from "axios";
 
-class CM extends React.Component{
+class CMresult extends React.Component{
 
 	state = {
-		body: this.props.body || "",
-		title: this.props.title || "",
-		newid: this.props.newid,
-		creator: this.props.currentUser
+		body: this.props.data.body || "",
+		title: this.props.data.title || "",
+		newid: this.props.data._id,
+		createdAt: this.props.data.createdAt,
+		creator: this.props.data.creator
 	}
 
 	handleInputChange = (event) => {
@@ -49,6 +50,7 @@ class CM extends React.Component{
 		return (
 			<div className="snippet-result">
 				<form className="form" onSubmit={this.submitSnippet}>
+				<span>Created by: {this.state.creator} </span><span>Date Created: {this.state.createdAt}</span>
 					<input
 					value={this.state.title}
 					name="title"
@@ -67,4 +69,4 @@ class CM extends React.Component{
 	}
 };
 
-export default CM;
+export default CMresult;

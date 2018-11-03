@@ -88,14 +88,9 @@ class Card extends React.Component {
                     <button className="btn btn-outline-primary mt-2">LikeArticle</button>
                 </div>
 
-
             </div>
 
-
         )
-
     }
-
-
 }
 export default Card;

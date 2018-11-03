@@ -2,10 +2,9 @@ import React from "react";
 import "./Resources.css";
 import axios from "axios";
 import cheerio from "cheerio";
-// import {Link} from "react-router-dom";
-// import axios from "axios";
 import Card from "../Card";
 import Notebook from "../Notebook";
+
 
 class Resources extends React.Component {
   state = {

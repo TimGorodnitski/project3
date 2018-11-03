@@ -6,6 +6,8 @@ import CM from "../CM";
 // import axios from "axios";
 
 class New extends React.Component {
+
+  
   state = {
   };
 
@@ -16,8 +18,8 @@ class New extends React.Component {
   render() {
     return (
         <div>
-            <h1> This is the New Snippet page. </h1>
-            <CM />
+            <h1> This is the New Snippet page. Welcome, {this.props.currentUser}. </h1>
+            <CM currentUser={this.props.currentUser}/>
         </div>
     );
   }

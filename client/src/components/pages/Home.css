@@ -1,12 +1,13 @@
 html {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
-  height: 100%;
+  height: auto;
   width: 100%;
   position: relative;
   display: block;
+  color: white
 }
 
 .Navcontainer {
@@ -16,9 +17,9 @@ body {
 
 body::after {
   content: "";
-  background: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/1-nzoRO/javascript-code-on-dark-editor-background-shot-close-up-while-scrolling-the-page-and-randomly-changing-focus-point_hpgulg8gx__F0000.png") center no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.75),rgba(0, 0, 0, 0.75)), url("https://pace.oregonstate.edu/sites/default/files/styles/course_banner_large/public/images/course/cover/pace-oregon-state-html-css-coding-web-design.jpg") center;
   background-size: cover;
-  opacity: 0.85;
+  background-repeat: repeat-y;
   top: 0;
   left: 0;
   bottom: 0;
@@ -66,7 +67,12 @@ input{
   width: auto;
 }
 .jumbotron {
-  background: rgba(172, 164, 164, 0.75);
+  
+  background: linear-gradient( rgb(36, 36, 36), rgb(36, 36, 36) );
+  border-left: .5px solid cyan;
+  border-bottom: .5px solid cyan;
+  border-top: 25px solid whitesmoke;
+  border-right: 17px solid whitesmoke;
 }
 .developer {
   color: rgb(241, 164, 63)
@@ -75,5 +81,18 @@ input{
   color: rgb(7, 92, 172)
 }
 .purple {
-  color: purple;
+  color: rgb(223, 88, 223);
+}
+.green {
+  color: rgb(1, 194, 1);
+}
+.red {
+  color: rgb(255, 41, 41);
+  
+}
+.lightBlue {
+  color: rgb(132, 209, 235);
+}
+.yellow {
+  color: yellow;
 }
