@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 const router = require("express").Router();
 const Snippet = require("../models/Snippet");
-const User = require("../client/models/Users");
-const Note = require("../client/models/Note");
-const Article = require("../client/models/Article");
+const Article = require("../models/Article");
 var User = mongoose.model('User');
 const passport = require('passport');
 
@@ -25,17 +23,17 @@ router.post("/save", function(req, res) {
   });
 });
 
-router.post("/note", function(req, res) {
-  // as long as req.body matches what the model expects, this should insert into the database
- Note.create(req.body)
-  .then(() => {
-    res.json(true);
-  })
-  .catch((err) => {
-    // if not, we can at least catch the error
-    res.json(err);
-  });
-});
+// router.post("/note", function(req, res) {
+//   // as long as req.body matches what the model expects, this should insert into the database
+//  Note.create(req.body)
+//   .then(() => {
+//     res.json(true);
+//   })
+//   .catch((err) => {
+//     // if not, we can at least catch the error
+//     res.json(err);
+//   });
+// });
 
 
 router.get("/snippets", function(req, res) {
@@ -61,18 +59,18 @@ router.get("/articles/:id", function(req, res) {
     });
 });
 
-router.post("/articles/:id", function(req, res) {
-  Note.create(req.body)
-    .then(function(dbNote) {
-      return Article.findOneAndUpdate({ _id: req.params.id }, { note: dbNote._id }, { new: true });
-    })
-    .then(function(dbArticle) {
-      res.json(dbArticle);
-    })
-    .catch(function(err) {
-      res.json(err);
-    });
-});
+// router.post("/articles/:id", function(req, res) {
+//   Note.create(req.body)
+//     .then(function(dbNote) {
+//       return Article.findOneAndUpdate({ _id: req.params.id }, { note: dbNote._id }, { new: true });
+//     })
+//     .then(function(dbArticle) {
+//       res.json(dbArticle);
+//     })
+//     .catch(function(err) {
+//       res.json(err);
+//     });
+// });
 
 router.get("/snippets/:user", function(req, res) {
   // as long as req.body matches what the model expects, this should insert into the database
@@ -111,12 +109,12 @@ router.post("/scrape", function(req, res) {
   });
 });
 
-router.delete("/notes/:id", function(req,res){
-  Note.findByIdAndRemove(req.params.id, function(err, response){
-    if (err) throw err;
-    res.json(response);    
-  })
-})
+// router.delete("/notes/:id", function(req,res){
+//   Note.findByIdAndRemove(req.params.id, function(err, response){
+//     if (err) throw err;
+//     res.json(response);    
+//   })
+// })
 
 router.get("/articles", function(req, res) {
   Article.find({})

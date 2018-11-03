@@ -69,9 +69,6 @@ var loginStyle = {
 
 
 class Header extends React.Component {
-  constructor(props){
-    super(props)
-  }
 
   state={
   }
@@ -87,7 +84,7 @@ class Header extends React.Component {
           <nav className="navbar navbar-dark bg-none">
             <header className="row" style={headerStyle}>
 
-              <img className="logoIMG" style={logo} src = "https://png.pngtree.com/png_detail/18/09/10/pngtree-Initial-Letter-BH-Logo-Design-png-clipart_3579590.jpg"></img>
+              <img className="logoIMG" style={logo} alt="logo" src="https://png.pngtree.com/png_detail/18/09/10/pngtree-Initial-Letter-BH-Logo-Design-png-clipart_3579590.jpg"></img>
 
               <h1 style={h1Style}><Link to="/" className="nav-link">BitHub</Link></h1>
               <div className="navbar-nav" style={navbarStyle}>
@@ -102,7 +99,7 @@ class Header extends React.Component {
 
                 <Link to="/profile" className="nav-link navLink" style={LinkStyle}>Profile</Link>
                 
-                <img className = "loginIMG" style={loginStyle} href="/profile" src="https://static.thenounproject.com/png/23665-200.png"></img>
+                <img className = "loginIMG" style={loginStyle} alt="profile" href="/profile" src="https://static.thenounproject.com/png/23665-200.png"></img>
                 {this.props.currentUser}
 
               </div>
