@@ -68,11 +68,9 @@ input{
 }
 .jumbotron {
   
-  background: linear-gradient( rgb(36, 36, 36), rgb(36, 36, 36) );
-  border-left: .5px solid cyan;
-  border-bottom: .5px solid cyan;
-  border-top: 25px solid whitesmoke;
-  border-right: 17px solid whitesmoke;
+  
+  border: 1px solid cyan;
+  padding: 0;
 }
 .developer {
   color: rgb(241, 164, 63)
