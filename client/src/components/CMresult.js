@@ -9,8 +9,15 @@ class CMresult extends React.Component{
 		title: this.props.data.title || "",
 		newid: this.props.data._id,
 		createdAt: this.props.data.createdAt,
-		creator: this.props.data.creator
+		creator: this.props.data.creator,
+		language: this.props.language || "javascript",
+		options: {
+			lineNumbers: true,
+			theme: "dracula",
+			mode: this.props.language || "javascript"
+		}
 	}
+
 
 	handleInputChange = (event) => {
 		// update any state property with the input value of the same name
@@ -43,9 +50,7 @@ class CMresult extends React.Component{
 	
 
 	render() {
-		var options = {
-			lineNumbers: true
-		};
+		
 
 		return (
 			<div className="snippet-result">
@@ -59,7 +64,7 @@ class CMresult extends React.Component{
 					placeholder="Snippet Title"
 					className="form-control"
 					/>
-					<CodeMirror value={this.state.body} onChange={this.updateCode} options={options} />
+					<CodeMirror value={this.state.body} onChange={this.updateCode} options={this.state.options}  />
 					<button type="submit" className="btn btn-outline-primary mt-2">Save Snippet</button>
 					<button type="button" className="btn btn-outline-primary mt-2"  onClick={() => this.props.deleteSnippet(this.state.newid)}> Delete Snippet</button>
 				</form>
