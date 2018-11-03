@@ -75,7 +75,9 @@ class Home extends React.Component {
 			console.log(response)
 		  if (response.status === 200) {
         let currentUser = this.state.username;
+        this.props.passData("loggedIn", true);
         this.setState({currentUser}, () => this.props.passData("currentUser", this.state.currentUser));
+
 				alert("Signed up!")
 		  }
 		  // mongoose validation failed
@@ -93,13 +95,15 @@ class Home extends React.Component {
 			console.log(response.data);
 		  if (response.data.username) {
         var currentUser = response.data.username;
+
         this.setState({currentUser}, () => this.props.passData("currentUser", this.state.currentUser));
         alert("Logged In!");
 		  }
 		  // mongoose validation failed
 		  else {
 				alert("Error. Not Logged in.");
-		  }
+      }
+      this.props.passData("loggedIn", true);
 		});
   };
 
@@ -126,26 +130,26 @@ class Home extends React.Component {
       </div>
     </div>
 
-        <div id="modal" style={this.state.styles1}>
-          <button id="closeModal" onClick={this.closeSignInModal1}>x</button>
-          <h1>Sign In</h1>
-          <form className="login-signup-form" onSubmit={(event)=>{this.handleLogIn(event)}}>
-            <input type="text" name="username" placeholder="Username" onChange={this.handleInputChange} autoFocus />
-            <input type="password" name="password" placeholder="Password" onChange={this.handleInputChange} />
-            <button className="success-button" id="submit" type="submit">Login</button>
-            <a href="#modalSignUp" id="createLink" onClick={()=>{this.closeSignInModal1();this.toggleSignInModal2()}}>Create an account</a>
-          </form>
-        </div>
+      <div id="modal" style={this.state.styles1}>
+        <button id="closeModal" onClick={this.closeSignInModal1}>x</button>
+        <h1>Sign In</h1>
+        <form className="login-signup-form" onSubmit={(event)=>{this.handleLogIn(event)}}>
+          <input type="text" name="username" placeholder="Username" onChange={this.handleInputChange} autoFocus />
+          <input type="password" name="password" placeholder="Password" onChange={this.handleInputChange} />
+          <button className="success-button" id="submit" type="submit">Login</button>
+          <a href="#modalSignUp" id="createLink" onClick={()=>{this.closeSignInModal1();this.toggleSignInModal2()}}>Create an account</a>
+        </form>
+      </div>
 
-        <div id="modalSignUp" style={this.state.styles2}>
-          <button id="closeModalSignUp" onClick={this.closeSignInModal2}>x</button>
-          <h1>Sign Up</h1>
-          <form className="login-signup-form" onSubmit={(event)=>{this.handleSignUp(event)}}>
-            <input type="text" name="username" placeholder="Username" onChange={this.handleInputChange} autoFocus />
-            <input type="password" name="password" placeholder="Password" onChange={this.handleInputChange} />
-            <button className="success-button" type="submit">Sign Up</button>
-          </form>
-        </div>
+      <div id="modalSignUp" style={this.state.styles2}>
+        <button id="closeModalSignUp" onClick={this.closeSignInModal2}>x</button>
+        <h1>Sign Up</h1>
+        <form className="login-signup-form" onSubmit={(event)=>{this.handleSignUp(event)}}>
+          <input type="text" name="username" placeholder="Username" onChange={this.handleInputChange} autoFocus />
+          <input type="password" name="password" placeholder="Password" onChange={this.handleInputChange} />
+          <button className="success-button" type="submit">Sign Up</button>
+        </form>
+      </div>
         
       </div>
     );

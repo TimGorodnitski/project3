@@ -5,7 +5,8 @@ import axios from "axios";
 
 class Profile extends React.Component {
   state = {
-    results: []
+    results: [],
+    loggedIn: false
   };
 
   componentDidMount() {
@@ -33,6 +34,15 @@ class Profile extends React.Component {
 		});
 	};
 
+  renderWelcome = (status) => {
+    if(status){
+      return <h1> {this.props.currentUser}'s Profile </h1>
+    }else{
+      return <h1>Please Log In To See Your Profile</h1>
+    }
+
+  }
+
   render() {     
     var options = {
       lineNumbers: true
@@ -40,7 +50,7 @@ class Profile extends React.Component {
     
     return (
       <div>
-          <h1> {this.props.currentUser}'s Profile </h1>
+          {this.renderWelcome(this.props.loggedIn)}
           {
             this.state.results.map((item) => {
               // create a route-able link for each product
