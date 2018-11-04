@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
-var ArticleSchema = new Schema({
+var LikeArticleSchema = new Schema({
   title: {
     type: String,
     required: true
@@ -8,11 +8,14 @@ var ArticleSchema = new Schema({
   link: {
     type: String,
     required: true, 
-    unique:true, 
     // match:[/^(?:(?!react).)+$/ig, "no bad react"]
   },
- 
+  ID: {
+    type: String,
+    required: true, 
+  
+  }
 
 });
-var Article = mongoose.model("Article", ArticleSchema);
-module.exports = Article;
+var LikeArticle = mongoose.model("LikeArticle", LikeArticleSchema);
+module.exports = LikeArticle;

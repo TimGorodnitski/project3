@@ -2,10 +2,13 @@ import React from "react";
 import "./Profile.css";
 import CMresult from "../CMresult";
 import axios from "axios";
+import Card from "../Card";
+
 
 class Profile extends React.Component {
   state = {
     results: [],
+    articleResults: [],
     loggedIn: false
   };
 
@@ -16,6 +19,15 @@ class Profile extends React.Component {
 
       this.setState({
         results: response.data
+      });
+
+    });
+    axios.get("/likeArticle/" + this.props.currentUser).then((response) => {
+
+      console.log(response.data);
+
+      this.setState({
+        articleResults: response.data
       });
 
     });
@@ -59,6 +71,14 @@ class Profile extends React.Component {
               );
             })
           }
+          {
+          this.state.articleResults.map((item) => {
+            // create a route-able link for each product
+            return (
+              <Card title={item.title} link={item.link} currentUser={this.props.currentUser}/>
+            );
+          })
+        }
       </div>
     );
   }

@@ -5,6 +5,7 @@ const Note = require("../models/Note");
 const Article = require("../models/Article");
 var User = mongoose.model('User');
 const passport = require('passport');
+const LikeArticle = require("../models/LikeArticle");
 
 
 router.post("/save", function(req, res) {
@@ -40,16 +41,23 @@ router.post("/note", function(req, res) {
 });
 
 router.post("/likeArticle", function(req, res) {
-
-
- Note.create(notes)
+ LikeArticle.create(req.body)
   .then(() => {
     res.json(true);
   })
   .catch((err) => {
-    // if not, we can at least catch the error
     res.json(err);
   });
+});
+
+router.get("/likeArticle/:id", function(req, res) {
+  LikeArticle.find({ ID: req.params.id })
+    .then(function(dbArticle) {
+      res.json(dbArticle);
+    })
+    .catch(function(err) {
+      res.json(err);
+    });
 });
 
 router.get("/notecreated", function(req, res) {

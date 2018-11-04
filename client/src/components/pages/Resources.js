@@ -101,7 +101,7 @@ class Resources extends React.Component {
           this.state.results.map((item) => {
             // create a route-able link for each product
             return (
-              <Card title={item.title} link={item.link} />
+              <Card title={item.title} link={item.link} currentUser={this.props.currentUser}/>
             );
           })
         }

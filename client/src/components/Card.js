@@ -7,6 +7,7 @@ class Card extends React.Component {
     state = {
         noteTitle: "",
         body: "",
+        ID: this.props.currentUser,
         styles: {
             card: {
                 margin: "5px, 5px, 5px, 5px",
@@ -34,7 +35,6 @@ class Card extends React.Component {
 
 	likeArticle = (event) => {
 		event.preventDefault();
-	
 		axios.post("/likeArticle", this.state).then((response) => {
 			console.log(response)
 		  if (response.data === true) {
@@ -45,8 +45,6 @@ class Card extends React.Component {
 				alert("likePage to db");
 		  }
         });
-        
-    
 	};
 
 	submitNote = (event) => {
