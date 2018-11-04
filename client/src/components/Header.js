@@ -23,7 +23,7 @@ var linkStyle = {
 var linkstyle = {
   paddingLeft: "15px",
   paddingRight: "15px",
-  color: "lightgreen",
+  color: "orange",
   fontSize: "27px",
   opacity: "0.7"
 }
@@ -31,7 +31,15 @@ var linkstyle = {
 var LinkStyle = {
   paddingLeft: "15px",
   paddingRight: "15px",
-  color: "orange",
+  color: "lightgreen",
+  fontSize: "27px",
+  opacity: "0.7"
+}
+
+var linkstyles = {
+  paddingLeft: "15px",
+  paddingRight: "15px",
+  color: "cyan",
   fontSize: "27px",
   opacity: "0.7"
 }
@@ -97,7 +105,7 @@ class Header extends React.Component {
                 
                 <Link to="/new" className="nav-link navLink" style={LinkStyle}>New Snippet</Link>
 
-                <Link to="/profile" className="nav-link navLink" style={LinkStyle}>Profile</Link>
+                <Link to="/profile" className="nav-link navLink" style={linkstyles}>My Snippets</Link>
                 
                 <img className = "loginIMG" style={loginStyle} alt="profile" href="/profile" src="https://static.thenounproject.com/png/23665-200.png"></img>
                 {this.props.currentUser}

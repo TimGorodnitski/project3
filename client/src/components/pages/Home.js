@@ -132,28 +132,31 @@ Here is the `;
         <div className="jumbotron">
             <CodeMirror value={message} options={options}/>
         </div>
-      
+  
+        <div id="modal" style={this.state.styles1}>
+          <button id="closeModal" onClick={this.closeSignInModal1} type="button" className="close" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+          </button>
+          <h1>Sign In</h1>
+          <form className="login-signup-form" onSubmit={(event)=>{this.handleLogIn(event)}}>
+            <input type="text" name="username" placeholder="Username" onChange={this.handleInputChange} autoFocus /><br></br>
+            <input type="password" name="password" placeholder="Password" onChange={this.handleInputChange} /><br></br>
+            <button className="success-button" id="submit" type="submit">Login</button> <br></br>
+            <a href="#modalSignUp" id="createLink" onClick={()=>{this.closeSignInModal1();this.toggleSignInModal2()}}>Create an account</a>
+          </form>
+        </div>
 
-      <div id="modal" style={this.state.styles1}>
-        <button id="closeModal" onClick={this.closeSignInModal1}>x</button>
-        <h1>Sign In</h1>
-        <form className="login-signup-form" onSubmit={(event)=>{this.handleLogIn(event)}}>
-          <input type="text" name="username" placeholder="Username" onChange={this.handleInputChange} autoFocus />
-          <input type="password" name="password" placeholder="Password" onChange={this.handleInputChange} />
-          <button className="success-button" id="submit" type="submit">Login</button>
-          <a href="#modalSignUp" id="createLink" onClick={()=>{this.closeSignInModal1();this.toggleSignInModal2()}}>Create an account</a>
-        </form>
-      </div>
-
-      <div id="modalSignUp" style={this.state.styles2}>
-        <button id="closeModalSignUp" onClick={this.closeSignInModal2}>x</button>
-        <h1>Sign Up</h1>
-        <form className="login-signup-form" onSubmit={(event)=>{this.handleSignUp(event)}}>
-          <input type="text" name="username" placeholder="Username" onChange={this.handleInputChange} autoFocus />
-          <input type="password" name="password" placeholder="Password" onChange={this.handleInputChange} />
-          <button className="success-button" type="submit">Sign Up</button>
-        </form>
-      </div>
+        <div id="modalSignUp" style={this.state.styles2}>
+          <button id="closeModalSignUp" onClick={this.closeSignInModal2} type="button" className="close" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+          </button>
+          <h1>Sign Up</h1>
+          <form className="login-signup-form" onSubmit={(event)=>{this.handleSignUp(event)}}>
+            <input type="text" name="username" placeholder="Username" onChange={this.handleInputChange} autoFocus /><br></br>
+            <input type="password" name="password" placeholder="Password" onChange={this.handleInputChange} /><br></br>
+            <button className="success-button" type="submit">Sign Up</button>
+          </form>
+        </div>
         
       </div>
     );
