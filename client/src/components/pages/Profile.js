@@ -25,7 +25,7 @@ class Profile extends React.Component {
 		console.log("delete _id: " + id)
 		// send the entire state object to the back-end
 		axios.delete("/delete/" + id).then((response) => {
-            axios.get("/snippets").then((response) => {
+            axios.get("/snippets/" + this.props.currentUser).then((response) => {
                 console.log(response.data);
                 this.setState({
                 results: response.data
@@ -55,7 +55,7 @@ class Profile extends React.Component {
             this.state.results.map((item) => {
               // create a route-able link for each product
               return (
-                <CMresult key={item._id} data={item} deleteSnippet={this.deleteSnippet} options={options}/>
+                <CMresult currentUser={this.props.currentUser} key={item._id} data={item} deleteSnippet={this.deleteSnippet} options={options}/>
               );
             })
           }

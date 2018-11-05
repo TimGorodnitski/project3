@@ -9,7 +9,7 @@ class Search extends React.Component {
   };
 
   componentDidMount() {
-    axios.get("/snippets").then((response) => {
+    axios.get("/allsnippets").then((response) => {
       console.log(response.data);
       this.setState({
         results: response.data

@@ -49,6 +49,14 @@ class CMresult extends React.Component{
 	};
 	
 
+
+	renderDeleteButton = () => {
+		if(this.props.currentUser === this.state.creator){
+		  return <button type="button" className="btn btn-outline-primary mt-2" onClick={()=> this.props.deleteSnippet(this.state.newid)}>Delete Snippet</button>
+		}
+	
+	}
+
 	render() {
 		
 
@@ -66,6 +74,7 @@ class CMresult extends React.Component{
 					/>
 					<CodeMirror value={this.state.body} onChange={this.updateCode} options={this.state.options}  />
 					<button type="submit" className="btn btn-outline-primary mt-2">Save Snippet</button>
+					{this.renderDeleteButton()}
 				</form>
 
 			</div>

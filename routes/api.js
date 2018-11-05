@@ -63,7 +63,19 @@ router.get("/notecreated", function(req, res) {
   });
 });
 
-router.get("/snippets", function(req, response) {
+router.get("/snippets/:user", function(req, res) {
+  // as long as req.body matches what the model expects, this should insert into the database
+ Snippet.find({creator: req.params.user, public:true})
+  .then((mySnippets) => {
+    res.json(mySnippets);
+  })
+  .catch((err) => {
+    // if not, we can at least catch the error
+    res.json(err);
+  });
+});
+
+router.get("/allsnippets/", function(req, response) {
   // as long as req.body matches what the model expects, this should insert into the database
  Snippet.find({public:true})
   .then((allSnippets) => {
@@ -99,17 +111,7 @@ router.post("/articles/:id", function(req, res) {
     });
 });
 
-router.get("/snippets/:user", function(req, res) {
-  // as long as req.body matches what the model expects, this should insert into the database
- Snippet.find({creator: req.params.user})
-  .then((mySnippets) => {
-    res.json(mySnippets);
-  })
-  .catch((err) => {
-    // if not, we can at least catch the error
-    res.json(err);
-  });
-});
+
 
 router.delete("/delete/:id", function(req, res) {
   Snippet.deleteOne({_id: req.params.id})
