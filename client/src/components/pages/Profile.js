@@ -1,15 +1,17 @@
 import React from "react";
 import "./Profile.css";
 import CMresult from "../CMresult";
+import Card from "../Card";
 import axios from "axios";
 
 class Profile extends React.Component {
   state = {
     results: [],
-    loggedIn: false
+    articleResults: []
   };
 
   componentDidMount() {
+
     axios.get("/snippets/" + this.props.currentUser).then((response) => {
 
       console.log(response.data);
@@ -19,6 +21,13 @@ class Profile extends React.Component {
       });
 
     });
+
+    axios.get("/articles/" + this.props.currentUser).then((res) => {
+      this.setState({
+        articleResults: res.data
+      })
+    })
+
   }
 
   deleteSnippet = (id) => {
@@ -43,6 +52,7 @@ class Profile extends React.Component {
 
   }
 
+
   render() {     
     var options = {
       lineNumbers: true
@@ -59,6 +69,15 @@ class Profile extends React.Component {
               );
             })
           }
+          {
+            this.state.articleResults.map((item) => {
+              // create a route-able link for each product
+              return (
+                <Card currentUser={item.user} title={item.title} key={item.link} link={item.link} />
+              );
+            })
+          }
+
       </div>
     );
   }

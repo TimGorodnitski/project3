@@ -87,7 +87,7 @@ router.get("/allsnippets/", function(req, response) {
 });
 
 router.get("/articles/:id", function(req, res) {
-  Article.findOne({ _id: req.params.id })
+  Article.find({ user: req.params.id })
     .then(function(dbArticle) {
       res.json(dbArticle);
     })

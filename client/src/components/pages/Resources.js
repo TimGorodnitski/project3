@@ -52,17 +52,6 @@ class Resources extends React.Component {
   //   });
   // }
 
-  // getData = (cb) => {
-
-  //   axios.get("/articles").then((res) => {
-  //     this.setState({
-  //       results: res.data
-  //     }, () => {
-  //       cb(this.state.results)
-  //     })
-
-  //   })
-  // };
 
   // clickMe = () => {
   //   this.getData((response) => {
