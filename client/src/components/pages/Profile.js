@@ -78,7 +78,7 @@ class Profile extends React.Component {
               console.log(item)
               // create a route-able link for each product
               return (
-                <Card id={item._id} currentUser={item.user} title={item.title} key={item.link} link={item.link} deleteArticle={this.deleteArticle}/>
+                <Card page={"profile"} id={item._id} currentUser={item.user} title={item.title} key={item.link} link={item.link} deleteArticle={this.deleteArticle}/>
               );
             })
           }

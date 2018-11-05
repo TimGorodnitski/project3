@@ -52,7 +52,7 @@ router.post("/likeArticle", function(req, res) {
 });
 
 router.get("/notecreated", function(req, res) {
- Note.find()
+  Note.find()
   .then((allNote) => {
     res.json(allNote);
   })
@@ -64,7 +64,7 @@ router.get("/notecreated", function(req, res) {
 
 router.get("/snippets/:user", function(req, res) {
   // as long as req.body matches what the model expects, this should insert into the database
- Snippet.find({creator: req.params.user})
+  Snippet.find({creator: req.params.user})
   .then((mySnippets) => {
     res.json(mySnippets);
   })
@@ -76,7 +76,7 @@ router.get("/snippets/:user", function(req, res) {
 
 router.get("/allsnippets/", function(req, response) {
   // as long as req.body matches what the model expects, this should insert into the database
- Snippet.find({public:true})
+  Snippet.find({public:true})
   .then((allSnippets) => {
     response.json(allSnippets);
   })
@@ -172,7 +172,7 @@ router.post('/login', passport.authenticate('local'),
     // If this function gets called, authentication was successful.
     // `req.user` contains the authenticated user.
     res.json(req.user);
-  })
+})
 
 
 router.post('/signup', (req, res, next) => {
@@ -214,8 +214,7 @@ router.post('/signup', (req, res, next) => {
     }
   })
 
-}
-, passport.authenticate('local', {
+}, passport.authenticate('local', {
   successRedirect: '/',
 })
 );

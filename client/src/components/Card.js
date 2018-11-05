@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Notebook from "./Notebook";
+// import Notebook from "./Notebook";
 
 
 class Card extends React.Component {
@@ -8,7 +8,7 @@ class Card extends React.Component {
         noteTitle: "",
         body: "",
         ID: this.props.currentUser,
-        // logIn: false,
+        page: "",
         styles: {
             card: {
                 margin: "10px 5px 10px 5px",
@@ -90,7 +90,13 @@ class Card extends React.Component {
         });
         
         this.setState({noteTitle: "", body: ""})
-	};
+    };
+    
+    renderDeleteButton(){
+        if(this.props.page==="profile"){
+            return <button className="btn btn-outline-primary mt-2" onClick={this.deleteArticle}>DeleteMePlease</button>
+        }
+    }
 
     render() { 
         // if(!this.state.deleted){
@@ -130,7 +136,7 @@ class Card extends React.Component {
     
                         {/* <button className="btn btn-outline-primary mt-2" onClick={this.submitNote}>AddComment</button> */}
                         <button className="btn btn-outline-primary mt-2" onClick={this.likeArticle}>LikeArticle</button>
-                        <button className="btn btn-outline-primary mt-2" onClick={this.deleteArticle}>DeleteMePlease</button>
+                        {this.renderDeleteButton()}
                     </div>
                     {/* <div>
                         <h1>Notes</h1>
