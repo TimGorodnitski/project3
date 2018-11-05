@@ -27,7 +27,6 @@ app.use(session({
 
 
 // Serve up static assets (usually on heroku)
-console.log("env: " + process.env.NODE_ENV)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
@@ -42,7 +41,6 @@ app.get("*", (req, res) => {
 });
 
 // Connect to the Mongo DB
-console.log(process.env.MONGODB_URI)
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project3", { useNewUrlParser: true});
 
 app.listen(PORT, () => {
