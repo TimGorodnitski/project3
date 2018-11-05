@@ -59,11 +59,12 @@ class CM extends React.Component {
 
 		// send the entire state object to the back-end
 		axios.post("/save", this.state).then((response) => {
-			console.log(response)
+
 			if (response.data !== true) {
 				alert("Error. Snippet was not created.");
-			}
+			}else{alert("Snippet saved!")};						
 		});
+
 	};
 
 
@@ -75,8 +76,6 @@ class CM extends React.Component {
 	
 
 render() {
-
-
 
 	return (
 		<div className="snippet-result">
