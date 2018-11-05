@@ -11,7 +11,7 @@ class Card extends React.Component {
         // logIn: false,
         styles: {
             card: {
-                margin: "5px, 5px, 5px, 5px",
+                margin: "10px 5px 10px 5px",
                 background: "#e8eaf6"
             },
             title: {
@@ -132,10 +132,10 @@ class Card extends React.Component {
                         <button className="btn btn-outline-primary mt-2" onClick={this.likeArticle}>LikeArticle</button>
                         <button className="btn btn-outline-primary mt-2" onClick={this.deleteArticle}>DeleteMePlease</button>
                     </div>
-                    <div>
+                    {/* <div>
                         <h1>Notes</h1>
                         <Notebook noteTitle={this.props.title} />
-                    </div>
+                    </div> */}
     
     
     
