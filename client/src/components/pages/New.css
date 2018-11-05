@@ -2,3 +2,33 @@
   font-family: 'consolata', monospace;
   color: white;
 }
+
+.snippet-result {
+  border: 1px solid white;
+  background-color: black;
+  border-radius: 3px;
+  opacity: 0.9;
+  padding: 10px 15px !important;
+  margin: 50px;
+}
+
+h2 {
+  font-family: 'consolata', monospace;
+  font-size: 25px;
+  float: right;
+  margin: auto;
+  padding: 15px !important;
+  color: whitesmoke;
+}
+
+.checkbox {
+  height: 17px!important;
+  width: 17px !important;
+  padding-top: 5px !important;
+  margin-left: 3px !important;
+  cursor: pointer !important;
+}
+
+.btn-outline-primary {
+  margin-right: 10px;
+}

@@ -1,9 +1,11 @@
 import React from 'react';
 import CodeMirror from 'react-codemirror';
 import axios from "axios";
+import "./Header.css";
 require("codemirror/mode/javascript/javascript");
 require("codemirror/mode/htmlmixed/htmlmixed");
 require("codemirror/mode/css/css");
+
 
 class CM extends React.Component {
 
@@ -57,15 +59,12 @@ class CM extends React.Component {
 
 		// send the entire state object to the back-end
 		axios.post("/save", this.state).then((response) => {
-			console.log(response)
-			if (response.data === true) {
-				alert("Success")
-			}
-			// mongoose validation failed
-			else {
+
+			if (response.data !== true) {
 				alert("Error. Snippet was not created.");
-			}
+			}else{alert("Snippet saved!")};						
 		});
+
 	};
 
 
@@ -77,8 +76,6 @@ class CM extends React.Component {
 	
 
 render() {
-
-
 
 	return (
 		<div className="snippet-result">
@@ -92,11 +89,12 @@ render() {
 					className="form-control"
 				/>
 				<CodeMirror value={this.state.body} onChange={this.updateCode} options={this.state.options} />
-				<button type="submit" className="btn btn-outline-primary mt-2">Save Snippet</button>
+				<button type="submit" className="btn btn-outline-primary mt-2 saveSnippetBtn">Create Snippet</button>
+				<span className="languageText">Language</span>
 				<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.onChangeHtml('javascript')}> Javascript</button>
 				<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.onChangeHtml('htmlmixed')}> HTML</button>
 				<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.onChangeHtml('css')}> CSS</button>
-				<h2>Private Snippet: <input class="checkbox" type="checkbox" ref="privateCheck" style={this.state.styles.input} onChange={this.handlePrivacyChange} value="false" name="private"></input></h2>
+				<h2>Private Snippet <input class="checkbox" type="checkbox" ref="privateCheck" style={this.state.styles.input} onChange={this.handlePrivacyChange} value="false" name="private"></input></h2>
 			</form>
 
 		</div>

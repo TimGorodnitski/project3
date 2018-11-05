@@ -44,13 +44,13 @@ class Resources extends React.Component {
     ////// End of scrape ///////
   };
 
-  // getNote = () => {
-  //   axios.get("/notecreated").then((response) => {
-  //     this.setState({
-  //       note: response.data
-  //     });
-  //   });
-  // }
+  getNote = () => {
+    axios.get("/notecreated").then((response) => {
+      this.setState({
+        note: response.data
+      });
+    });
+  }
 
 
   // clickMe = () => {
@@ -70,7 +70,7 @@ class Resources extends React.Component {
     return (
 
       <div>
-        <h1 className="currentPage"> This is the Resources page. </h1>
+        <h1 className="currentPage"> The Latest Web Development Headlines </h1>
         {/* <button id="button" className="btn btn-outline-primary btn-sm"
           onClick={this.clickMe} >Sort Article!</button> */}
 
@@ -78,7 +78,7 @@ class Resources extends React.Component {
           this.state.results.map((item) => {
             // create a route-able link for each product
             return (
-              <Card currentUser={this.props.currentUser} title={item.title} key={item.link} link={item.link} />
+              <Card page={"resources"} currentUser={this.props.currentUser} title={item.title} key={item.link} link={item.link} item={item}/>
             );
           })
         }
