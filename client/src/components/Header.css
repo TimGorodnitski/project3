@@ -2,6 +2,36 @@
   font-family: 'consolata', monospace;
 }
 
+.fullLogo {
+  position: absolute;
+  cursor: pointer;
+  height: 66px;
+  width: 190px;
+  border-radius: 15%;
+}
+
+.fullLogo:hover .logoIMG {
+  opacity: 1 !important;
+  transition: 0.3s ease-in;
+}
+
+#bitHub {
+  position: absolute;
+  left: 60px;
+}
+
+.logoIMG {
+  position: absolute;
+  transition: 0.3s ease-out;
+}
+
+#resourcesLink:hover, #searchLink:hover, #newsnippetLink:hover, #mysnippetsLink:hover {
+  opacity: 1 !important;
+  -webkit-text-stroke: 1px;
+  transition: 0.3s ease-in;
+  transition: 0.3s ease-out;
+}
+
 .nav-link {
   font-family: 'consolata', monospace;
   color: rgb(255, 41, 41);
@@ -9,14 +39,14 @@
   margin-top: auto;
   margin-bottom: auto;
   padding-left: 0px;
-  -webkit-text-stroke: .5px rgb(25, 25, 25);
-  transition: 0.2s ease-out;
+  /* -webkit-text-stroke: .5px rgb(25, 25, 25); */
+  transition: 0.3s ease-out;
 }
-.nav-link:hover {
+.fullLogo:hover #bitHub{
   color: rgb(255, 41, 41);
   opacity: 1;
-  -webkit-text-stroke: 1.5px ;
-  text-shadow: .3px .3px ;
+  /* -webkit-text-stroke: 1.5px ; */
+  text-shadow: .5px .5px ;
   transition: 0.3s ease-in;
 }
 
@@ -36,6 +66,12 @@ h1 {
   background-color: rgba(25, 25, 25, 0.5);
   border-bottom: 0.5px solid rgb(7, 7, 7);
 
+}
+
+.userName {
+  padding-left: 3px;
+  margin: auto;
+  cursor: pointer;
 }
 
 container {
