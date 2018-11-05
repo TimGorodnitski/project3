@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Notebook from "./Notebook";
 
 
 class Card extends React.Component {
@@ -9,19 +8,23 @@ class Card extends React.Component {
         body: "",
         styles: {
             card: {
-                margin: "5px, 5px, 5px, 5px",
-                background: "#e8eaf6"
+                margin: "10px 10px 5px 5px",
+                background: "#e8eaf6",
+                padding: "20px 20px"
             },
             title: {
                 background: "#3f51b5",
-                minHeight: 50,
-                lineHeight: 3.5,
+                lineHeight: 1.5,
                 fontSize: "1.2rem",
                 color: "white",
                 padding: "0 20px"
             },
             link: {
-                background:"#00FF00"
+                background:"#00FF00",
+                lineHeight: 1.5,
+                fontSize: "1.2rem",
+                color: "white",
+                padding: "0 20px"
             }
         }
     };
@@ -34,8 +37,14 @@ class Card extends React.Component {
 
 	likeArticle = (event) => {
 		event.preventDefault();
-	
-		axios.post("/likeArticle", this.state).then((response) => {
+    
+        var liked = {
+            title: this.props.title,
+            link: this.props.link,
+            user: this.props.currentUser
+        }
+
+		axios.post("/likeArticle", liked).then((response) => {
 			console.log(response)
 		  if (response.data === true) {
 				alert("Success")
@@ -74,18 +83,16 @@ class Card extends React.Component {
 
                 <div className="content">
                     <ul>
-                        <div>
-                            <li style={this.state.styles.title}>
-                                <strong>Title:  {this.props.title}</strong>
-                            </li>
+                        <li style={this.state.styles.title}>
+                            <strong>Title:  {this.props.title}</strong>
+                        </li>
+                        <li style={this.state.styles.link}>
+                            <strong>Link:  <a href={this.props.link} target="_blank">{this.props.link}</a></strong>
+                        </li>
 
-                            <li style={this.state.styles.link}>
-                                <strong>Link:  <a href={this.props.link} target="_blank">{this.props.link}</a></strong>
-                            </li>
-                        </div>
                     </ul>
                     <div>
-                        <textarea
+                        <input
                             value={this.state.noteTitle}
                             name="noteTitle"
                             onChange={this.handleInputChange}
@@ -105,10 +112,10 @@ class Card extends React.Component {
                     <button className="btn btn-outline-primary mt-2" onClick={this.submitNote}>AddComment</button>
                     <button className="btn btn-outline-primary mt-2" onClick={this.likeArticle}>LikeArticle</button>
                 </div>
-                <div>
+                {/* <div>
                     <h1>Notes</h1>
                     <Notebook noteTitle={this.props.title} />
-                </div>
+                </div> */}
 
 
 

@@ -41,8 +41,7 @@ router.post("/note", function(req, res) {
 
 router.post("/likeArticle", function(req, res) {
 
-
- Note.create(notes)
+ Article.create(req.body)
   .then(() => {
     res.json(true);
   })
@@ -89,7 +88,6 @@ router.get("/allsnippets/", function(req, response) {
 
 router.get("/articles/:id", function(req, res) {
   Article.findOne({ _id: req.params.id })
-    .populate("note")
     .then(function(dbArticle) {
       res.json(dbArticle);
     })

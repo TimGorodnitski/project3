@@ -4,7 +4,7 @@ class Notebook extends React.Component {
     state = {
         styles: {
             card: {
-                margin: "5px, 5px, 5px, 5px",
+                margin: "5px 5px 5px 5px",
                 background:"#000000", 
                 lineHeight: 2.5, 
                 fontSize: "20px", 
@@ -24,12 +24,9 @@ class Notebook extends React.Component {
                             <li>
                                 <strong>noteTitle:  {this.props.noteTitle}</strong>
                             </li>
-                            <div />
-                            <div>
-                                <li>
-                                    <strong>Body:  {this.props.body}</strong>
-                                </li>
-                            </div>
+                            <li>
+                                <strong>Body:  {this.props.body}</strong>
+                            </li>
                         </div>
                     </ul>
                 </div>

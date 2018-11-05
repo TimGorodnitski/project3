@@ -11,6 +11,7 @@ var ArticleSchema = new Schema({
     unique:true, 
     // match:[/^(?:(?!react).)+$/ig, "no bad react"]
   },
+  user: String
 
 });
 var Article = mongoose.model("Article", ArticleSchema);
