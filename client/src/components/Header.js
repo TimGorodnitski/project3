@@ -46,32 +46,35 @@ var linkstyles = {
 
 var h1Style = {
   paddingRight: "15px",
-  color: "white"
+  color: "white",
+  marginLeft: "10px",
 }
 
 
 var logo = {
-  width: "75px",
-  height: "75px",
-  opacity: "0.9",
-  marginTop: "2px",
-  padding: "5px",
+  width: "50px",
+  height: "50px",
+  opacity: "0.5",
+  marginTop: "8px",
+  // marginRight: "10px",
+  // padding: "5px",
   cursor: "pointer",
-  backgroundColor: "rgba(25, 25, 25, 0)",
-  borderRadius: "50%",
+  border: "0.5px solid black",
+  // backgroundColor: "rgba(25, 25, 25, 0)",
+  borderRadius: "20%",
   
 }
 
 var loginStyle = {
-  height: "50px",
-  width: "50px",
+  height: "30px",
+  width: "30px",
   backgroundColor: "grey",
   marginLeft: "20px",
   marginTop: "15px",
   marginBottom: "15px",
   borderRadius: "50%",
   cursor: "pointer",
-  border: "2px solid black"
+  border: "1px solid black"
 
 }
 
@@ -91,24 +94,24 @@ class Header extends React.Component {
         <div>
           <nav className="navbar navbar-dark bg-none">
             <header className="row" style={headerStyle}>
-
-              <img className="logoIMG" style={logo} alt="logo" src="https://png.pngtree.com/png_detail/18/09/10/pngtree-Initial-Letter-BH-Logo-Design-png-clipart_3579590.jpg"></img>
-
-              <h1 style={h1Style}><Link to="/" className="nav-link">BitHub</Link></h1>
+            <div className="fullLogo">
+              <img className="logoIMG" style={logo} alt="logo" src="https://yt3.ggpht.com/a-/AN66SAx9PIe3C5skwcMtRSBsLehSxatZ0EJYaszD9w=s900-mo-c-c0xffffffff-rj-k-no"></img>
+              <h1 style={h1Style}><Link to="/" id="bitHub" className="nav-link">BitHub</Link></h1>
+              </div>
               <div className="navbar-nav" style={navbarStyle}>
 
                 
 
-                <Link to="/resources" className="nav-link navLink" style={linkStyle}>Resources</Link>
+                <Link to="/resources" id="resourcesLink" className="nav-link navLink" style={linkStyle}>Resources</Link>
                 
-                <Link to="/search" className="nav-link navLink" style={linkstyle}>Search</Link>
+                <Link to="/search" id="searchLink" className="nav-link navLink" style={linkstyle}>Search</Link>
                 
-                <Link to="/new" className="nav-link navLink" style={LinkStyle}>New Snippet</Link>
+                <Link to="/new" id="newsnippetLink" className="nav-link navLink" style={LinkStyle}>New Snippet</Link>
 
-                <Link to="/profile" className="nav-link navLink" style={linkstyles}>My Snippets</Link>
+                <Link to="/profile" id="mysnippetsLink" className="nav-link navLink" style={linkstyles}>My Snippets</Link>
                 
                 <img className = "loginIMG" style={loginStyle} alt="profile" href="/profile" src="https://static.thenounproject.com/png/23665-200.png"></img>
-                {this.props.currentUser}
+                <span className="userName">{this.props.currentUser}</span>
 
               </div>
             </header>
