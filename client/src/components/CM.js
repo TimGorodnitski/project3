@@ -10,6 +10,7 @@ class CM extends React.Component {
 	state = {
 		body: this.props.body || "",
 		title: this.props.title || "",
+		public: true,
 		newid: this.props.newid,
 		creator: this.props.currentUser,
 		language: this.props.language || "javascript",
@@ -32,6 +33,18 @@ class CM extends React.Component {
 			body: newCode,
 		});
 	}
+
+	handlePrivacyChange = () => {
+		// update any state property with the input value of the same name
+		if(this.state.public){
+			this.setState({public: false})
+		}else{
+			this.setState({
+			public: true
+		});
+		}
+
+	};
 
 	submitSnippet = (event) => {
 		event.preventDefault();
@@ -74,10 +87,10 @@ render() {
 				/>
 				<CodeMirror value={this.state.body} onChange={this.updateCode} options={this.state.options} />
 				<button type="submit" className="btn btn-outline-primary mt-2">Save Snippet</button>
-				<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.props.deleteSnippet(this.state.newid)}> Delete Snippet</button>
 				<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.onChangeHtml('javascript')}> Javascript</button>
 				<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.onChangeHtml('htmlmixed')}> HTML</button>
 				<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.onChangeHtml('css')}> CSS</button>
+				<h2>Private Snippet:</h2><input class="checkbox" type="checkbox" ref="privateCheck" onChange={this.handlePrivacyChange} value="false" name="private"></input>
 			</form>
 
 		</div>
