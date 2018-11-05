@@ -38,7 +38,7 @@ class Search extends React.Component {
     
     return (
       <div>
-          <h1> This is the Search page. </h1>
+          <h1> All Public Snippets </h1>
           {
             this.state.results.map((item) => {
               // create a route-able link for each product

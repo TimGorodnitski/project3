@@ -40,7 +40,7 @@ class Profile extends React.Component {
 
   renderWelcome = (status) => {
     if(status){
-      return <h1> {this.props.currentUser}'s Profile </h1>
+      return <h1> {this.props.currentUser}'s Snippets and Liked Articles </h1>
     }else{
       return <h1>Please Log In To See Your Profile</h1>
     }
