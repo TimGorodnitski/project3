@@ -7,7 +7,11 @@ body {
   width: 100%;
   position: relative;
   display: block;
-  color: white
+  color: white;
+  font-family: 'consolata', monospace;
+}
+.card-body {
+  color: black;
 }
 
 .container {
@@ -112,8 +116,9 @@ input{
   width: auto;
 }
 .jumbotron {
-  
-  
+  margin: 0 auto;
+  width: 70%;
+  margin-bottom: 70px;
   border: 1px solid cyan;
   padding: 0;
 }
@@ -138,4 +143,20 @@ input{
 }
 .yellow {
   color: yellow;
+}
+.card-img-top {
+  max-height: 179px;
+  
+}
+#cardsRow {
+  padding-bottom: 80px;
+}
+.card {
+  align-content: center;
+  margin: 0 auto;
+  background: none;
+  border: .5px solid white;
+}
+.card-body {
+  color: white;
 }
