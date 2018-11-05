@@ -37,44 +37,6 @@ body::after {
   color: white;
 }
 
-#modal {
-  margin: auto;
-  top: 50%;
-  width: 40%;
-  height: 225px;
-  border: 3px solid white;
-  padding: 7px;
-  margin-top: -100px;
-  background-color: black;
-  border-radius: 3%;  
-  left: 50%;
-  margin-left: -20%;
-  position: relative;
-  text-align: center
-}
-
-#modalSignUp {
-  margin: auto;
-  top: 50%;
-  width: 40%;
-  border: 3px solid white;
-  padding: 7px;
-  height: 225px;
-  background-color: black;
-  border-radius: 3%;
-  left: 50%;
-  margin-left: -20%;
-  margin-top: -100px;
-  position: relative;
-  text-align: center;
-}
-
-#closeModalSignUp {
-  float: right;
-  color: red;
-  background-color: black;
-  text-shadow: none;
-}
 
 .success-button {
   width: 125px;

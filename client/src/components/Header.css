@@ -79,3 +79,52 @@ container {
   margin-left: 0px;
   margin-right: 0px;
 }
+
+
+#modal {
+  margin: auto;
+  top: 50%;
+  width: 40%;
+  height: 225px;
+  border: 3px solid white;
+  padding: 7px;
+  margin-top: -100px;
+  background-color: black;
+  border-radius: 3%;  
+  left: 50%;
+  margin-left: -20%;
+  position: fixed;
+  text-align: center;
+  z-index: 30;
+}
+
+#modalSignUp {
+  margin: auto;
+  top: 50%;
+  width: 40%;
+  border: 3px solid white;
+  padding: 7px;
+  height: 225px;
+  background-color: black;
+  border-radius: 3%;
+  left: 50%;
+  margin-left: -20%;
+  margin-top: -100px;
+  position: fixed;
+  text-align: center;
+  z-index: 40;
+}
+
+#closeModalSignUp {
+  float: right;
+  color: red;
+  background-color: black;
+  text-shadow: none;
+}
+
+#openModal {
+  height: 45%;
+  border-radius: 10%;
+  margin-top: 16px;
+  margin: 10px;
+}
