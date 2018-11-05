@@ -56,15 +56,16 @@
   color: whitesmoke;
   border-color: green;
   margin-left: 30px;
+  margin-top: 0px !important;
 }
 
 .languageText {
   font-size: 25px;
   font-family: 'consolata', monospace;
-  margin-left: 25%;
+  margin-left: 20%;
   margin-right: 10px;
-  line-height: 2;
-  display: inline;
+  padding-top: 25px;
+  display: inline-block;
 }
 
 .saveSnippetBtn:hover {
@@ -100,6 +101,11 @@ h1 {
   margin-top: auto;
   margin-bottom: auto;
 }
+
+h2 {
+  padding: auto;
+}
+
 .navbar-nav {
   float: right;
   margin-left: auto;
@@ -133,23 +139,37 @@ container {
 }
 
 .createdby {
-  margin-left: 10%;
-  margin-right: 5%;
-  margin-top: 10px;
+  margin-left: 3%;
+  margin-right: 2%;
+  margin-top: 13px;
   font-family: 'consolata', monospace;
   display: inline-block;
 }
 
 .datecreated {
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 3%;
+  margin-right: 2%;
+  margin-top: 13px;
   font-family: 'consolata', monospace;
   display: inline-block;
 }
 
 .language {
-  margin-left: 5%;
-  /* margin-right: 5%; */
+  margin-left: 3%;
+  margin-right: 2%;
+  margin-top: 13px;
   font-family: 'consolata', monospace;
   display: inline-block;
+}
+
+.languageButtonJS {
+  margin-bottom: 15px;
+}
+
+.languageButtonHTML {
+  margin-bottom: 15px;
+}
+
+.languageButtonCSS {
+  margin-bottom: 15px;
 }

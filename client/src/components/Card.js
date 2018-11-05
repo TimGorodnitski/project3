@@ -12,18 +12,18 @@ class Card extends React.Component {
         styles: {
             card: {
                 margin: "10px 5px 10px 5px",
-                background: "#e8eaf6"
+                backgroundColor: "black"
             },
             title: {
-                background: "#3f51b5",
-                minHeight: 50,
-                lineHeight: 3.5,
+                background: "black",
+                minHeight: 30,
                 fontSize: "1.2rem",
-                color: "white",
+                color: "whitesmoke",
                 padding: "0 20px"
             },
             link: {
-                background:"#00FF00"
+                background:"black",
+                color: "whitesmoke"
             }
         }
     };
@@ -95,18 +95,18 @@ class Card extends React.Component {
     render() { 
         // if(!this.state.deleted){
             return (
-                <div>
+                <div className="holder">
                 {/* {this.sayWelcome()} */}
                 <div className="card" style={this.state.styles.card}>
                     <div className="content">
                         <ul>
                             <div>
                                 <li style={this.state.styles.title}>
-                                    <strong>Title:  {this.props.title}</strong>
+                                    <strong className="resourcesTitle">{this.props.title}</strong>
                                 </li>
     
                                 <li style={this.state.styles.link}>
-                                    <strong>Link:  <a href={this.props.link} target="_blank">{this.props.link}</a></strong>
+                                    <strong className="resourcesLink"><a href={this.props.link} target="_blank">{this.props.link}</a></strong>
                                 </li>
                             </div>
                         </ul>
@@ -129,8 +129,8 @@ class Card extends React.Component {
                         </div> */}
     
                         {/* <button className="btn btn-outline-primary mt-2" onClick={this.submitNote}>AddComment</button> */}
-                        <button className="btn btn-outline-primary mt-2" onClick={this.likeArticle}>LikeArticle</button>
-                        <button className="btn btn-outline-primary mt-2" onClick={this.deleteArticle}>DeleteMePlease</button>
+                        <button className="btn btn-outline-primary mt-2 likeBtn" onClick={this.likeArticle}>LikeArticle</button>
+                        <button className="btn btn-outline-primary mt-2 deleteBtn" onClick={this.deleteArticle}>DeleteMePlease</button>
                     </div>
                     {/* <div>
                         <h1>Notes</h1>
