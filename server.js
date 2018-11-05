@@ -27,8 +27,9 @@ app.use(session({
 
 
 // Serve up static assets (usually on heroku)
+console.log("env: " + process.env.NODE_ENV)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/public"));
+  app.use(express.static("client/build"));
 }
 
 // Define API routes here
@@ -37,7 +38,7 @@ app.use(routes);
 
 // Send every other request to the React app
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/public/index.html"));
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 // Connect to the Mongo DB
