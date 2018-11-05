@@ -58,11 +58,7 @@ class CM extends React.Component {
 		// send the entire state object to the back-end
 		axios.post("/save", this.state).then((response) => {
 			console.log(response)
-			if (response.data === true) {
-				alert("Success")
-			}
-			// mongoose validation failed
-			else {
+			if (response.data !== true) {
 				alert("Error. Snippet was not created.");
 			}
 		});

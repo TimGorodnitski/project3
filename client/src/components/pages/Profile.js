@@ -13,9 +13,6 @@ class Profile extends React.Component {
   componentDidMount() {
 
     axios.get("/snippets/" + this.props.currentUser).then((response) => {
-
-      console.log(response.data);
-
       this.setState({
         results: response.data
       });
@@ -31,11 +28,9 @@ class Profile extends React.Component {
   }
 
   deleteSnippet = (id) => {
-		console.log("delete _id: " + id)
 		// send the entire state object to the back-end
 		axios.delete("/delete/" + id).then((response) => {
             axios.get("/snippets/" + this.props.currentUser).then((response) => {
-                console.log(response.data);
                 this.setState({
                 results: response.data
             });

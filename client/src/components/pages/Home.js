@@ -78,7 +78,6 @@ class Home extends React.Component {
         let currentUser = this.state.username;
 
         this.setState({currentUser}, () => this.props.passData("currentUser", this.state.currentUser));
-				alert("Signed up!")
 		  }
 		  // mongoose validation failed
 		  else {
@@ -98,7 +97,6 @@ class Home extends React.Component {
         var currentUser = response.data.username;
 
         this.setState({currentUser}, () => this.props.passData("currentUser", this.state.currentUser));
-        alert("Logged In!");
 		  }
 		  // mongoose validation failed
 		  else {
