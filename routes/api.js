@@ -122,6 +122,17 @@ router.delete("/delete/:id", function(req, res) {
       res.json(err);
     });
 });
+router.delete("/article/:id", function(req, res) {
+  Article.deleteOne({_id: req.params.id})
+    .then(function(article) {
+      // If we were able to successfully delete a Snippet, send it back to the client
+      res.json(article);
+    })
+    .catch(function(err) {
+      // If an error occurred, send it to the client
+      res.json(err);
+    });
+});
 
 router.post("/scrape", function(req, res) {
   Article.create(req.body)

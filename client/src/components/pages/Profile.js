@@ -51,6 +51,15 @@ class Profile extends React.Component {
     }
 
   }
+  deleteArticle = (id) =>{
+    axios.delete(`/article/${id}`).then(response => {
+      axios.get("/articles/" + this.props.currentUser).then((res) => {
+        this.setState({
+          articleResults: res.data
+        })
+      })
+    }).catch(err => console.log(err))
+  }
 
 
   render() {     
@@ -71,9 +80,10 @@ class Profile extends React.Component {
           }
           {
             this.state.articleResults.map((item) => {
+              console.log(item)
               // create a route-able link for each product
               return (
-                <Card currentUser={item.user} title={item.title} key={item.link} link={item.link} />
+                <Card id={item._id} currentUser={item.user} title={item.title} key={item.link} link={item.link} deleteArticle={this.deleteArticle}/>
               );
             })
           }
