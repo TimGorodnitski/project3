@@ -208,7 +208,9 @@ class Header extends React.Component {
 
                 
                 <img className = "loginIMG" style={loginStyle} alt="profile" href="/profile" src="https://static.thenounproject.com/png/23665-200.png"></img>
-                <span className="userName">{this.props.currentUser}</span>
+                <div id="userNameText">
+                <span className="userName">{this.props.loggedIn.username}</span>
+                </div>
 
             <button id="openModal" onClick={this.toggleSignInModal1}>Sign In</button>
 

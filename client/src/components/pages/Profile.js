@@ -12,14 +12,14 @@ class Profile extends React.Component {
 
   componentDidMount() {
 
-    axios.get("/snippets/" + this.props.currentUser).then((response) => {
+    axios.get("/snippets/" + this.props.loggedIn.username).then((response) => {
       this.setState({
         results: response.data
       });
 
     });
 
-    axios.get("/articles/" + this.props.currentUser).then((res) => {
+    axios.get("/articles/" + this.props.loggedIn.username).then((res) => {
       this.setState({
         articleResults: res.data
       })
@@ -30,7 +30,7 @@ class Profile extends React.Component {
   deleteSnippet = (id) => {
 		// send the entire state object to the back-end
 		axios.delete("/delete/" + id).then((response) => {
-            axios.get("/snippets/" + this.props.currentUser).then((response) => {
+            axios.get("/snippets/" + this.props.loggedIn.username).then((response) => {
                 this.setState({
                 results: response.data
             });
@@ -40,7 +40,7 @@ class Profile extends React.Component {
 
   renderWelcome = (status) => {
     if(status){
-      return <h1> {this.props.currentUser}'s Profile </h1>
+      return <h1> {this.props.loggedIn.username}'s Profile </h1>
     }else{
       return <h1>Please Log In To See Your Profile</h1>
     }
@@ -48,7 +48,7 @@ class Profile extends React.Component {
   }
   deleteArticle = (id) =>{
     axios.delete(`/article/${id}`).then(response => {
-      axios.get("/articles/" + this.props.currentUser).then((res) => {
+      axios.get("/articles/" + this.props.loggedIn.username).then((res) => {
         this.setState({
           articleResults: res.data
         })
@@ -69,7 +69,7 @@ class Profile extends React.Component {
             this.state.results.map((item) => {
               // create a route-able link for each product
               return (
-                <CMresult currentUser={this.props.currentUser} key={item._id} data={item} deleteSnippet={this.deleteSnippet} options={options}/>
+                <CMresult currentUser={this.props.loggedIn.username} key={item._id} data={item} deleteSnippet={this.deleteSnippet} options={options}/>
               );
             })
           }

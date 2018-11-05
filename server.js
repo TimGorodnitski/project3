@@ -9,6 +9,12 @@ const session = require('express-session');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+app.use(session({
+  secret: 'password',
+  resave: true,
+  maxAge: 20000,
+  saveUninitialized: true
+}));
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -19,11 +25,7 @@ require('./passportconfig').configure(passport);
 app.use(expressValidator());
 
 app.use(express.static('public'));
-app.use(session({
-  secret: 'password',
-  resave: false,
-  saveUninitialized: false
-}));
+
 
 
 // Serve up static assets (usually on heroku)

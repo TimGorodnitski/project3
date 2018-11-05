@@ -18,8 +18,8 @@ class New extends React.Component {
   renderWelcome = (status) => {
     if(status){
       return (
-      <div><h1>This is the New Snippet page. Welcome, {this.props.currentUser}. </h1>
-      <CM currentUser={this.props.currentUser}/>
+      <div><h1>This is the New Snippet page. Welcome, {this.props.loggedIn.username}. </h1>
+      <CM currentUser={this.props.loggedIn.username}/>
       </div>)
     }else{
       return <h1>Please Log In To Save a Snippet</h1>
