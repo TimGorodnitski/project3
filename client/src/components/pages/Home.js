@@ -73,7 +73,7 @@ class Home extends React.Component {
 
             <div className="col-md-4">
               <div className="card" style={{ width: 18 + 'em' }}>
-                <img className="card-img-top" src="http://www.uxbeginner.com/wp-content/uploads/2016/01/ultimate-list-ux-topics-banner-user-research-480x300.png" alt="Coding"></img>
+                <img className="card-img-top" src="https://njcpa.org/images/default-source/ArticleThumbs/technology_network_istock-482763127.jpg?sfvrsn=103d753a_0" alt="Coding"></img>
                 <div className="card-body">
                   <h5 className="card-title">Explore Resources</h5>
                   <p className="card-text">Check out and keep up with all the new resources that pop up onto the scene in real-time!</p>
