@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import "./Footer.css";
 
 
@@ -25,11 +24,11 @@ class Footer extends React.Component {
         return (
             <div>
                 <footer className = "footer">
-                <a href="https://github.com/TimGorodnitski/project3" target="_blank">
+                <a href="https://github.com/TimGorodnitski/project3" target="_blank" rel="noopener noreferrer">
                <img className="gitLogo"   style={gitHubStyle} alt="gitHubLogo" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"></img> 
                </a>
                <div className="linkGit">
-                <a href="https://github.com/TimGorodnitski/project3" id="gitLink" target="_blank">GitHub</a>
+                <a href="https://github.com/TimGorodnitski/project3" id="gitLink" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
                 </footer>
             </div>
