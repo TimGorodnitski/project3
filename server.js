@@ -41,6 +41,7 @@ app.get("*", (req, res) => {
 });
 
 // Connect to the Mongo DB
+console.log(process.env.MONGODB_URI)
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project3", { useNewUrlParser: true});
 
 app.listen(PORT, () => {
