@@ -19,7 +19,7 @@ const snippetSchema = new Schema({
     type: String,
     required: true
   },
-  notes: String,
+  public: Boolean,
   language: String,
   tags: []
 });

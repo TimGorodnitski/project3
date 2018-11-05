@@ -65,7 +65,7 @@ router.get("/notecreated", function(req, res) {
 
 router.get("/snippets", function(req, response) {
   // as long as req.body matches what the model expects, this should insert into the database
- Snippet.find()
+ Snippet.find({public:true})
   .then((allSnippets) => {
     response.json(allSnippets);
   })
