@@ -90,10 +90,10 @@ render() {
 				/>
 				<CodeMirror value={this.state.body} onChange={this.updateCode} options={this.state.options} />
 				<button type="submit" className="btn btn-outline-primary mt-2 saveSnippetBtn">Create Snippet</button>
-				<span className="languageText">Language</span>
-				<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.onChangeHtml('javascript')}> Javascript</button>
-				<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.onChangeHtml('htmlmixed')}> HTML</button>
-				<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.onChangeHtml('css')}> CSS</button>
+				<span className="languageText">Language: </span>
+				<button type="button" className="btn btn-outline-primary mt-2 languageButtonJS" onClick={() => this.onChangeHtml('javascript')}> Javascript</button>
+				<button type="button" className="btn btn-outline-primary mt-2 languageButtonHTML" onClick={() => this.onChangeHtml('htmlmixed')}> HTML</button>
+				<button type="button" className="btn btn-outline-primary mt-2 languageButtonCSS" onClick={() => this.onChangeHtml('css')}> CSS</button>
 				<h2>Private Snippet <input class="checkbox" type="checkbox" ref="privateCheck" style={this.state.styles.input} onChange={this.handlePrivacyChange} value="false" name="private"></input></h2>
 			</form>
 

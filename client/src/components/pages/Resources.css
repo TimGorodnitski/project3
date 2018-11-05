@@ -2,3 +2,65 @@
   font-family: 'consolata', monospace;
   color: white;
 }
+
+.content {
+  width: 100%;
+}
+
+.card {
+  border: 1px solid cyan;
+  border-radius: 3px;
+  color: black;
+  width: 90%;
+  padding: 15px;
+  left: 50%;
+  margin-left: -12% !important;
+  margin-bottom: 30px !important;
+  text-align: center;
+}
+
+.resourcesTitle {
+  font-family: 'consolata', monospace;
+  font-size: 1.25em;
+}
+
+.resourcesLink {
+  font-family: 'consolata', monospace;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 0px !important;
+}
+
+.holder {
+  max-width: 90%;
+  left: 50%;
+  margin-left: -25%;
+}
+
+.likeBtn {
+  color: green;
+  border-color: green;
+  margin: 10px !important;
+}
+
+.deleteBtn {
+  color: red;
+  border-color: red;
+  margin: 10px !important;
+  margin-left: 3px !important;
+}
+
+.likeBtn:hover {
+  background-color: green;
+  border-color: green;
+}
+
+.deleteBtn:hover {
+  border-color: red;
+  background-color: red;  
+}
