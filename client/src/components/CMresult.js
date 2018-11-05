@@ -71,7 +71,7 @@ class CMresult extends React.Component{
 					type="text"
 					placeholder="Snippet Title"
 					className="form-control"
-					/>
+					/><span>Language: {this.props.data.language}</span>
 					<CodeMirror value={this.state.body} onChange={this.updateCode} options={this.state.options}  />
 					<button type="submit" className="btn btn-outline-primary mt-2">Save Snippet</button>
 					{this.renderDeleteButton()}
