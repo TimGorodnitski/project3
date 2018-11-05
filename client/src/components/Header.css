@@ -50,6 +50,51 @@
   transition: 0.3s ease-in;
 }
 
+.saveSnippetBtn {
+  /* margin-right: 33% !important; */
+  background-color: rgb(41, 41, 41);
+  color: whitesmoke;
+  border-color: green;
+  margin-left: 30px;
+}
+
+.languageText {
+  font-size: 25px;
+  font-family: 'consolata', monospace;
+  margin-left: 25%;
+  margin-right: 10px;
+  line-height: 2;
+  display: inline;
+}
+
+.saveSnippetBtn:hover {
+  color: whitesmoke;
+  background-color: green;
+  border-color: whitesmoke;
+}
+
+.updateButton {
+  color: green;
+  border-color: green;
+  margin-left: 30px;
+}
+
+.updateButton:hover {
+  background-color: green;
+  border-color: green;
+}
+
+.deleteButton {
+  color: red;
+  border-color: red;
+  margin-left: 10px;
+}
+
+.deleteButton:hover {
+  border-color: red;
+  background-color: red;
+}
+
 h1 {
   font-family: 'consolata', monospace;
   margin-top: auto;
@@ -78,4 +123,33 @@ container {
   width: 100%;
   margin-left: 0px;
   margin-right: 0px;
+}
+
+.snippetTitle {
+  font-size: 35px;
+  font-family: 'consolata', monospace;
+  /* -webkit-text-stroke: .5px red; */
+  color: whitesmoke;
+}
+
+.createdby {
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-top: 10px;
+  font-family: 'consolata', monospace;
+  display: inline-block;
+}
+
+.datecreated {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: 'consolata', monospace;
+  display: inline-block;
+}
+
+.language {
+  margin-left: 5%;
+  /* margin-right: 5%; */
+  font-family: 'consolata', monospace;
+  display: inline-block;
 }

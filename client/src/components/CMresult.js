@@ -1,6 +1,7 @@
 import React from 'react';
 import CodeMirror from 'react-codemirror';
 import axios from "axios";
+import "./Header.css";
 
 class CMresult extends React.Component{
 
@@ -52,7 +53,7 @@ class CMresult extends React.Component{
 
 	renderDeleteButton = () => {
 		if(this.props.currentUser === this.state.creator){
-		  return <button type="button" className="btn btn-outline-primary mt-2" onClick={()=> this.props.deleteSnippet(this.state.newid)}>Delete Snippet</button>
+		  return <button type="button" className="btn btn-outline-primary mt-2 deleteButton" onClick={()=> this.props.deleteSnippet(this.state.newid)}>Delete Snippet</button>
 		}
 	
 	}
@@ -63,7 +64,7 @@ class CMresult extends React.Component{
 		return (
 			<div className="snippet-result">
 				<form className="form" onSubmit={this.submitSnippet}>
-				<span>Created by: {this.state.creator} </span><span>Date Created: {this.state.createdAt}</span>
+			<span className="snippetTitle">Snippet Title: {this.state.title}</span>
 					<input
 					value={this.state.title}
 					name="title"
@@ -71,10 +72,13 @@ class CMresult extends React.Component{
 					type="text"
 					placeholder="Snippet Title"
 					className="form-control"
-					/><span>Language: {this.props.data.language}</span>
+					/>
 					<CodeMirror value={this.state.body} onChange={this.updateCode} options={this.state.options}  />
-					<button type="submit" className="btn btn-outline-primary mt-2">Save Snippet</button>
+					<button type="submit" className="btn btn-outline-primary mt-2 updateButton">Save Snippet</button>
 					{this.renderDeleteButton()}
+					<span className="createdby">Created by: {this.state.creator} </span>
+					<span className="datecreated">Date Created: {this.state.createdAt}</span>
+					<span className="language">Language: {this.props.data.language}</span>
 				</form>
 
 			</div>
