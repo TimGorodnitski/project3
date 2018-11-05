@@ -18,6 +18,12 @@ class CM extends React.Component {
 			lineNumbers: true,
 			theme: "dracula",
 			mode: "javascript"
+		},
+		styles:{
+			input: {
+				width: "auto",
+				display: "inline"
+			}
 		}
 	}
 
@@ -90,7 +96,7 @@ render() {
 				<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.onChangeHtml('javascript')}> Javascript</button>
 				<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.onChangeHtml('htmlmixed')}> HTML</button>
 				<button type="button" className="btn btn-outline-primary mt-2" onClick={() => this.onChangeHtml('css')}> CSS</button>
-				<h2>Private Snippet:</h2><input class="checkbox" type="checkbox" ref="privateCheck" onChange={this.handlePrivacyChange} value="false" name="private"></input>
+				<h2>Private Snippet: <input class="checkbox" type="checkbox" ref="privateCheck" style={this.state.styles.input} onChange={this.handlePrivacyChange} value="false" name="private"></input></h2>
 			</form>
 
 		</div>
