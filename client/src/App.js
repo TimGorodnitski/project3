@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header.js";
+import Footer from "./components/Footer"
 import Resources from "./components/pages/Resources";
 import Profile from "./components/pages/Profile";
 import Home from "./components/pages/Home";
@@ -30,6 +31,7 @@ class App extends React.Component {
           <Route exact path="/search" component={()=> <Search currentUser={this.state.currentUser} loggedIn={this.state.loggedIn} />} />
           <Route exact path="/profile" component={()=> <Profile currentUser={this.state.currentUser} loggedIn={this.state.loggedIn}/>} />
           <Route exact path="/new" component={()=> <New currentUser={this.state.currentUser} loggedIn={this.state.loggedIn}/>} />
+          <Footer />
         </div>
       </Router>
 
