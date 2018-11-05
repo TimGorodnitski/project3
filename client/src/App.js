@@ -24,7 +24,7 @@ class App extends React.Component {
     return (
       <Router>
         <div className="container">
-          <Header loggedIn={this.state.loggedIn} currentUser={this.state.currentUser} />
+          <Header loggedIn={this.state.loggedIn} currentUser={this.state.currentUser}  passData={this.passData}/>
           <Route exact path="/" component={()=> <Home currentUser={this.state.currentUser} passData={this.passData} loggedIn={this.state.loggedIn}/>} />
           <Route exact path="/resources" component={()=> <Resources currentUser={this.state.currentUser} loggedIn={this.state.loggedIn}/>} />
           <Route exact path="/search" component={()=> <Search currentUser={this.state.currentUser} loggedIn={this.state.loggedIn} />} />
