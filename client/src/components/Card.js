@@ -92,9 +92,11 @@ class Card extends React.Component {
         this.setState({noteTitle: "", body: ""})
     };
     
-    renderDeleteButton(){
+    renderButton(){
         if(this.props.page==="profile"){
-            return <button className="btn btn-outline-primary mt-2" onClick={this.deleteArticle}>DeleteMePlease</button>
+            return <button className="btn btn-outline-primary mt-2 deleteBtn" onClick={this.deleteArticle}>Delete Article</button>
+        }else{
+            return <button className="btn btn-outline-primary mt-2 likeBtn" onClick={this.likeArticle}>Save Article</button>
         }
     }
 
@@ -135,8 +137,7 @@ class Card extends React.Component {
                         </div> */}
     
                         {/* <button className="btn btn-outline-primary mt-2" onClick={this.submitNote}>AddComment</button> */}
-                        <button className="btn btn-outline-primary mt-2 likeBtn" onClick={this.likeArticle}>LikeArticle</button>
-                        {this.renderDeleteButton()}
+                        {this.renderButton()}
                     </div>
                     {/* <div>
                         <h1>Notes</h1>

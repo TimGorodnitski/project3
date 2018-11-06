@@ -63,7 +63,7 @@ class Profile extends React.Component {
     }
     
     return (
-      <div>
+      <div className="resultHolder">
           {this.renderWelcome(this.props.loggedIn)}
           {
             this.state.results.map((item) => {
@@ -73,6 +73,7 @@ class Profile extends React.Component {
               );
             })
           }
+          <br/>
           {
             this.state.articleResults.map((item) => {
               console.log(item)
