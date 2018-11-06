@@ -69,7 +69,7 @@ class Resources extends React.Component {
 
     return (
 
-      <div>
+      <div className="resultHolder">
         <h1 className="currentPage"> The Latest Web Development Headlines </h1>
         {/* <button id="button" className="btn btn-outline-primary btn-sm"
           onClick={this.clickMe} >Sort Article!</button> */}
