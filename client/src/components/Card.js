@@ -67,7 +67,7 @@ class Card extends React.Component {
 		  }
 		
 		  else {
-				alert("likePage to db");
+				alert("likePage does not send to db");
 		  }
         });
         
@@ -110,7 +110,7 @@ class Card extends React.Component {
                                 </li>
                             </div>
                         </ul>
-                        {/* <div>
+                        <div>
                             <textarea
                                 value={this.state.noteTitle}
                                 name="noteTitle"
@@ -126,12 +126,14 @@ class Card extends React.Component {
                                 placeholder="Add comment"
                                 className="form-control mt-2"
                             />
-                        </div> */}
+                        </div>
     
-                        {/* <button className="btn btn-outline-primary mt-2" onClick={this.submitNote}>AddComment</button> */}
+                        <button className="btn btn-outline-primary mt-2" onClick={this.submitNote}>AddComment</button>
                         <button className="btn btn-outline-primary mt-2" onClick={this.likeArticle}>LikeArticle</button>
                         <button className="btn btn-outline-primary mt-2" onClick={this.deleteArticle}>DeleteMePlease</button>
                     </div>
+
+                    
                     {/* <div>
                         <h1>Notes</h1>
                         <Notebook noteTitle={this.props.title} />

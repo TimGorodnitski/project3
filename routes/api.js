@@ -12,7 +12,6 @@ router.post("/save", function(req, res) {
   let d = new Date();
   req.body.createdAt = d.toDateString();
   const snippet = req.body;
-
   // as long as req.body matches what the model expects, this should insert into the database
  Snippet.create(snippet)
   .then(() => {
@@ -51,21 +50,13 @@ router.post("/likeArticle", function(req, res) {
   });
 });
 
-router.get("/notecreated", function(req, res) {
- Note.find()
-  .then((allNote) => {
-    res.json(allNote);
-  })
-  .catch((err) => {
 
-    res.json(err);
-  });
-});
 
 router.get("/snippets/:user", function(req, res) {
   // as long as req.body matches what the model expects, this should insert into the database
  Snippet.find({creator: req.params.user})
   .then((mySnippets) => {
+    console.log(mySnippets);
     res.json(mySnippets);
   })
   .catch((err) => {
@@ -95,6 +86,16 @@ router.get("/articles/:id", function(req, res) {
       res.json(err);
     });
 });
+router.get("/noteCreated", function(req, res) {
+  Note.find()
+   .then((allNote) => {
+     res.json(allNote);
+   })
+   .catch((err) => {
+ 
+     res.json(err);
+   });
+ });
 
 router.post("/articles/:id", function(req, res) {
   Note.create(req.body)

@@ -3,11 +3,13 @@ import "./Resources.css";
 import axios from "axios";
 import cheerio from "cheerio";
 import Card from "../Card";
+import Notebook from "../Notebook";
 
 
 class Resources extends React.Component {
   state = {
-    results: []
+    results: [], 
+    note: []
   };
 
   componentDidMount = () => {
@@ -45,7 +47,7 @@ class Resources extends React.Component {
   };
 
   getNote = () => {
-    axios.get("/notecreated").then((response) => {
+    axios.get("/noteCreated").then((response) => {
       this.setState({
         note: response.data
       });
@@ -68,7 +70,7 @@ class Resources extends React.Component {
   render() {
 
     return (
-
+      
       <div>
         <h1 className="currentPage"> This is the Resources page. </h1>
         {/* <button id="button" className="btn btn-outline-primary btn-sm"
@@ -79,6 +81,14 @@ class Resources extends React.Component {
             // create a route-able link for each product
             return (
               <Card currentUser={this.props.currentUser} title={item.title} key={item.link} link={item.link} item={item}/>
+            );
+          })
+        }
+        {
+          this.state.note.map((memo) => {
+            // create a route-able link for each product
+            return (
+              <Notebook currentUser={this.props.currentUser} noteTitle={memo.noteTitle} body={memo.body}/>
             );
           })
         }
