@@ -227,7 +227,7 @@ router.get("/auth", (req, res) => {
     });
   } else if (req.headers.cookie.indexOf('token=') !== -1) {
     const cookie = req.headers.cookie.match(/(?<=token=)[^ ;]*/)[0];
-    db.User.findOne({
+    User.findOne({
       where: {
         token: cookie,
       },

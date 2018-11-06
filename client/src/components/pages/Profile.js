@@ -64,7 +64,8 @@ class Profile extends React.Component {
     
     return (
       <div>
-          {this.renderWelcome(this.props.loggedIn)}
+          {this.renderWelcome(this.props.loggedIn.username
+            )}
           {
             this.state.results.map((item) => {
               // create a route-able link for each product
