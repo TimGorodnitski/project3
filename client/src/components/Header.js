@@ -9,10 +9,12 @@ var navbarStyle = {
   flexFlow: "row wrap",
   float: "right"
 }
+
 var headerStyle = {
   width: "100%",
   fontColor: "white"
 }
+
 var linkStyle = {
   paddingLeft: "15px",
   paddingRight: "15px",
@@ -190,7 +192,7 @@ class Header extends React.Component {
           <nav className="navbar navbar-dark bg-none">
             <header className="row" style={headerStyle}>
             <div className="fullLogo">
-              <img className="logoIMG" style={logo} alt="logo" src="https://yt3.ggpht.com/a-/AN66SAx9PIe3C5skwcMtRSBsLehSxatZ0EJYaszD9w=s900-mo-c-c0xffffffff-rj-k-no"></img>
+              <a href="/"><img className="logoIMG" style={logo} alt="logo" src="https://yt3.ggpht.com/a-/AN66SAx9PIe3C5skwcMtRSBsLehSxatZ0EJYaszD9w=s900-mo-c-c0xffffffff-rj-k-no"></img></a>
               <h1 style={h1Style}><Link to="/" id="bitHub" className="nav-link">BitHub</Link></h1>
               </div>
               <div className="navbar-nav" style={navbarStyle}>
@@ -206,13 +208,13 @@ class Header extends React.Component {
                 <Link to="/profile" id="mysnippetsLink" className="nav-link navLink" style={linkstyles}>My Snippets</Link>
 
                 
-                <img className = "loginIMG" style={loginStyle} alt="profile" href="/profile" src="https://static.thenounproject.com/png/23665-200.png"></img>
+                <a href="/profile"><img className = "loginIMG" style={loginStyle} alt="profile" src="https://static.thenounproject.com/png/23665-200.png"></img></a>
                 <span className="userName">{this.props.currentUser}</span>
 
             <button id="openModal" onClick={this.toggleSignInModal1}>Sign In</button>
 
 
-                        <div id="modal" style={this.state.styles1}>
+          <div id="modal" style={this.state.styles1}>
           <button id="closeModal" onClick={this.closeSignInModal1} type="button" className="close" aria-label="Close">
            <span aria-hidden="true">&times;</span>
           </button>
