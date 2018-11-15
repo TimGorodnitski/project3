@@ -1,29 +1,35 @@
-# Create React Express App
+# BitHub
 
-## About This Boilerplate
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+#### A site for users to save and share their favorite and most used code snippets.
+#### Users can create accounts and use our in-browser code-editor to create public or private snippets.
+#### Users can browse all public snippets and the latest code-related headlines scraped from the web.
+---------------
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+## Instructions:
+* Create an account or use login admin password admin to save snippets to the database or view them in the My Snippets page.
+* Save a snippet or an article to view them on the My Snippets page.
 
-## Starting the app locally
+---------------
+## [Trello](https://trello.com/b/vfRp5dCI/project-3)
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+## Team Members
+* [Tim Gorodnitski](https://github.com/TimGorodnitski)
+* [Andrea Tamez](https://github.com/Andreatmez)
+* [John Belciglio](https://github.com/jbelciglio)
+* [Kyle Schoch](https://github.com/kgschoch)
+* [Dongjie Cao](https://github.com/DongjieCao128)
 
-```
-yarn install
-```
 
-This should install node modules within the server and the client folder.
+---------------
 
-After both installations complete, run the following command in your terminal:
-
-```
-yarn start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest. Note: you need to check in your `yarn.lock` file so Heroku knows to run yarn.
+### The technologies we used to make this project:
+- [MongoDB](https://www.mongodb.com/)
+- [React](https://reactjs.org/)
+- [Express](https://expressjs.com/)
+- [Node](https://nodejs.org/en/)
+- [Bcrypt](https://www.npmjs.com/package/bcrypt)
+- [Passport](http://www.passportjs.org/)
+- [Codemirror](https://codemirror.net/)
+- [Axios](https://github.com/axios/axios)
+--------------
